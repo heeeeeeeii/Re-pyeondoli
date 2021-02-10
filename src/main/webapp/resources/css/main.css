@@ -1,0 +1,175 @@
+/*==========================================================
+                          메인화면 공통
+==========================================================*/
+
+.main_wrap{
+  max-width: 1200px ;
+  margin: 0 auto;
+}
+
+.main_wrap *{font-family: 'Nanum Gothic', sans-serif;}
+
+/*==========================================================
+                          대표 이미지
+==========================================================*/
+
+.main_img_box{
+  background-image: url(../img/main_img.jpg);
+  height: 560px;
+  /*    background-position: (x)  (y)   */
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.main_img_box > div{
+  margin: 90px 0 0 70px;
+  display: inline-block;
+  }      /* > 이 기호는 바로 하위의 무엇임을 의미  ex) .main_img_box의 바로 하위 div */
+.main_img_box > div img{}
+
+.main_img_box > div h3{
+  font-size: 22px;
+  color: #715b3a;
+  font-weight: 400;
+}
+
+.main_img_box > div h3 strong{}
+
+.main_img_box > div p{
+  font-size: 13px;
+  color: #a09a90;
+  line-height: 1.5em;
+  margin: 10px 0 0;
+}
+
+
+@media screen and (max-width:1024px) {
+  .main_img_box{
+    background-size: 85%;
+  }
+
+  .main_img_box > div img{
+    max-width: 80%;
+    margin: 0 auto;
+    display: block;
+  }
+
+}
+
+
+
+@media screen and (max-width:767px) {
+  .main_img_box{
+    background-position: right bottom;
+    height: 500px;
+    background-size: 150%;
+  }
+
+  .main_img_box > div{
+    margin: 10% 5% 0;
+  }
+
+  .main_img_box > div h3{
+    font-size: 5vw;
+  }
+
+  .main_img_box > div p{
+    font-size: 15px;
+  }
+
+  .main_img_box > div p br{
+    display: none;
+  }
+
+
+}
+
+/*==========================================================
+                       메인 화면 링크 배너
+==========================================================*/
+
+.main_banner_box{
+  display: flex;
+  padding: 0 20px;
+}
+
+.main_banner_box > div{
+  flex: 1;
+  margin: 0 15px;
+  padding: 25px;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  height: 200px;
+}
+
+.main_banner_box .box1{
+background-color: #ffcd81;
+background-image: url(../img/grid_bg1.png);
+}
+
+.main_banner_box .box2{
+background-color: #f5dcb5;
+background-image: url(../img/grid_bg2.png);
+}
+
+.main_banner_box .box3{
+background-color: #ffbf5d;
+background-image: url(../img/grid_bg3.png);
+}
+
+.main_banner_box > div h3{
+  font-size: 22px;
+  color: #715b3a;
+  font-weight: 400;
+}
+
+.main_banner_box > div h3 strong{}
+
+.main_banner_box > div p{
+  font-size: 12px;
+  color: #715b3a;
+  margin: 10px 0;
+  line-height: 1.5em;
+}
+
+.main_banner_box > div a{}
+
+.main_banner_box > div a img{}
+
+
+
+@media screen and (max-width:1024px) {
+
+  .main_banner_box > div{
+    height: 320px;
+  }
+  .main_banner_box > div h3{
+    font-size: 1.9vw
+  }
+  .main_banner_box > div p{font-size: 15px;}
+  .main_banner_box > div h3 br,
+  .main_banner_box >div p br {display: none;}
+
+}
+
+
+@media screen and (max-width:767px) {
+  .main_banner_box{
+    flex-direction: column;
+    padding: 20px 0 0;
+  }
+
+  .main_banner_box > div{
+    margin: 0 0 10px;
+    height: 280px;
+  }
+
+  .main_banner_box > div h3{
+    font-size: 6.7vw;
+  }
+
+}
+
+/*==========================================================
+                    메인 화면 게시판 및 링크
+==========================================================*/

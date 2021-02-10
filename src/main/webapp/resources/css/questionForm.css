@@ -1,0 +1,9 @@
+	.center .notice {
+	float: left;
+    padding-left: 45px;
+    padding-top: 25px;
+	}
+	
+	.center .notice .noticelist .noticetable thead {
+	background: #ffc107;
+	}

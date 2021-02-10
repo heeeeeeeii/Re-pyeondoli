@@ -1,0 +1,75 @@
+/*==========================================================
+==========================================================*/
+
+html, body {
+    overflow-x: hidden;
+    height: 100%;
+}
+.wrap{font-family: 'Do Hyeon', sans-serif;
+  width: 411px;
+  height: 750px;
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+header{
+  margin: 50px 0 100px 0;
+  width: 100%;
+  height: 100px;
+}
+.top_logo{
+  margin: 0 auto;
+  border: 1px solid #ffbb00;
+  border-radius: 10px;
+  text-align: center;
+  width: 230px;
+  height: 70px;
+}
+img{
+  width: 170px;
+  height: 70px;
+}
+.main1{
+  width: 230px;
+  height: 150px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.main1 .id{
+  width: 230px;
+  font-size: 20px;
+  height: 50px;
+  background-color: #ffbb00;
+  margin-bottom: 5px;
+}
+.main1 .pw{
+  width: 230px;
+  height: 50px;
+  font-size: 20px;
+  background-color: #ffbb00;
+}
+h2{
+  padding: 10px 0 0 10px;
+}
+.main2{
+  margin: 0 auto;
+  text-align: center;
+  width: 260px;
+  height: 130px;
+}
+.main2 .login{
+  border: 0;
+  width: 200px;
+  height: 30px;
+  font-size: 10px;
+  background-color: #ffbb00;
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+.main2 .join{
+  border: 0;
+  width: 200px;
+  height: 30px;
+  font-size: 10px;
+  background-color: #ffbb00;
+}

@@ -1,0 +1,75 @@
+.content{
+  width: 410px;
+  height: 700px;
+  margin-top: 70px;
+}
+
+.first_wrap{
+  width: 410px;
+  height: 80px;
+  background-color: #eee;
+  margin-bottom: 5px;
+}
+
+.first{
+  width: 410px;
+  height: 60px;
+  display: flex;
+}
+
+.first_img{
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+}
+
+.first_text{
+  width: 100px;
+  height: 25px;
+  margin: 10px;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #737373;
+}
+
+.first_branch{
+  width: 60px;
+  height: 25px;
+  background-color: #ffbb0077;
+  margin-left: 60px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.first_bottom{
+  width: 400px;
+  height: 20px;
+  display: flex;
+  color: #737373;
+}
+
+.quantity1{
+  width: 40px;
+  height: 15px;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.quantity2{
+  width: 30px;
+  height: 15px;
+  margin-right: 90px;
+  font-size: 14px;
+}
+
+.pay1{
+  width: 75px;
+  height: 15px;
+  font-size: 14px;
+}
+
+.pay2{
+  width: 80px;
+  height: 15px;
+  font-size: 14px;
+}

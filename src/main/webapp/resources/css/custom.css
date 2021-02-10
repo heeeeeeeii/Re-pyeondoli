@@ -1,0 +1,16 @@
+/* Customize css reset */
+
+a, a:active, a:hover, a:focus, a:visited, a:focus-within { text-decoration: none; color: inherit;}
+
+h1 { font-size: 100%; margin: 0; }
+
+html{ overflow-y:scroll; }
+
+body{ line-height: 1 !important;}
+
+* {
+  letter-spacing: -0.06em;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}

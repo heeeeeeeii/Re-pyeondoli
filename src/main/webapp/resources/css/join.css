@@ -1,0 +1,60 @@
+html, body {
+    overflow-x: hidden;
+    height: 100%;
+}
+.wrap{font-family: 'Do Hyeon', sans-serif;
+  width: 411px;
+  height: 750px;
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+header{
+  margin: 50px auto 50px auto;
+  width: 100%;
+  height: 100px;
+}
+.top_logo{
+  margin: 0 auto;
+  border: 1px solid #ffbb00;
+  border-radius: 10px;
+  text-align: center;
+  width: 230px;
+  height: 70px;
+}
+img{
+  width: 170px;
+  height: 70px;
+}
+input{
+  width: 170px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+.input1{
+  width: 200px;
+  height: 300px;
+  padding-top: 40px;
+  margin: 0 auto;
+}
+h2{
+  color: #ffbb00;
+}
+.main1{
+  width: 250px;
+  height: 300px;
+  margin: 0 auto;
+  border: 3px solid #ffbb00;
+  margin-bottom: 20px;
+}
+button{
+  width: 100px;
+  height: 30px;
+  border: 0;
+  background-color: #ffbb00;
+} 
+.button1{
+  width: 100%;
+  height: 50px;
+  text-align: center;
+}

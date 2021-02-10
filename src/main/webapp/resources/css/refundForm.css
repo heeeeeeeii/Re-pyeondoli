@@ -1,0 +1,21 @@
+	.refund_img {
+	width: 100%; 
+  	}
+  	
+  	.refund_text{
+  	border: 1px solid #ccc;
+	}
+	
+	.refundwrap {
+	padding: 10px;
+	}
+	
+	.refundwrap > h2{
+  	color: #ffbb00;
+  	font-size:16px;
+	}
+
+	.refundwrap > p {
+	font-size: 15px;
+	color: #4c4c4c;
+	}

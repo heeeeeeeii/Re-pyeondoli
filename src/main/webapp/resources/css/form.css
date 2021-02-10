@@ -1,0 +1,50 @@
+html, body {
+    overflow-x: hidden;
+    height: 100%;
+    margin: 0;
+}
+
+.wrap{
+  font-family: 'Do Hyeon', sans-serif;
+  width: 411px;
+  height: 731px;
+  margin: 0 auto;
+  display: table;
+}
+
+.header{
+  width:411px;
+  height:50px;
+  background-color: #ffbb00;
+  margin: 0 auto;
+  margin-bottom: 8px;
+  display: flex;
+  padding: 5px;
+  position: fixed;
+}
+
+.back{
+  display: flex;
+  margin: 5px
+}
+
+.top_p{
+  color: #fff;
+  width: 150px;
+  height: 55px;
+  font-size: 25px;
+  margin-top: 5px;
+}
+
+.img_back{
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+}
+
+.home_img{
+  width: 30px;
+  height: 30px;
+  margin-left: 160px;
+  margin-top: 5px;
+}

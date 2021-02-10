@@ -1,0 +1,134 @@
+/*----------------------------------------------------------
+---------------------Top-------------------------------------
+--------------------------------------------------------------*/
+header *{font-family: 'Nanum Gothic', sans-serif;}
+header{
+  border-bottom: 2px solid #f2c683;
+}
+header .header_wrap{
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: table;
+  height: 70px;
+  padding: 0 35px 0 65px;
+}
+header .header_wrap .logo{
+  float: left;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+header .header_wrap .logo a{
+
+}
+header .header_wrap .logo a img{
+
+}
+
+header .header_wrap nav{
+  float: right;
+  display: flex;
+  height: 100%;
+}
+header .header_wrap nav ul{
+  display: flex;
+}
+header .header_wrap nav ul li{}
+header .header_wrap nav ul li a{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 25px;
+  font-size: 14px;
+  color: #444;
+  font-weight: 800;
+}
+
+header .header_wrap nav .link{
+  display: flex;
+}
+header .header_wrap nav .link a{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+header .header_wrap nav .link a img{}
+header .header_wrap .icon{display: none;}
+
+@media screen and (max-width:1024px) {
+  header .header_wrap{
+    height: 50px;
+    padding: 0 15px;
+  }
+  header .header_wrap nav{
+    display: none;
+  }
+  header .header_wrap .icon{
+    display: flex;
+    float: right;
+    align-items: center;
+    height: 100%;
+  }
+  header .header_wrap .responsive{
+    display: flex;
+  }
+}
+
+/* =====================================================
+                       BOTTOM
+===================================================== */
+
+footer*{font-family: 'Nanum Gothic', sans-serif;}
+
+footer{
+  background-color: #857864;
+  margin: 100px 0 0;
+}
+footer .footer_wrap{
+  padding: 20px 0;
+}
+
+
+
+footer .footer_wrap ul{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+footer .footer_wrap ul li{
+  color: #eee;
+}
+footer .footer_wrap ul li:after{
+  content: "│";
+  margin: 0 15px;
+}
+footer .footer_wrap ul li:last-child:after{
+  display: none;
+}
+footer .footer_wrap ul li a{
+  font-size: 12px;
+}
+
+
+
+footer .footer_wrap .add{
+  text-align: center;
+  margin: 25px 0 10px 0;
+}
+footer .footer_wrap .add p{
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 12px;
+  color: #d5cec3;
+}
+
+
+footer .footer_wrap .copy{
+  text-align: center;
+  font-size: 13px;
+  color: #e6d2b4;
+}
+footer .footer_wrap .copy p {}
+footer .footer_wrap .copy p strong{}

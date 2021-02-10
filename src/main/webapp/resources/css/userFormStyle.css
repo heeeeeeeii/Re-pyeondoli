@@ -1,0 +1,34 @@
+	.container .wrap .center .introduce {
+	text-align: center;
+	}
+	
+	.container .wrap .center .notice {
+	background: white;
+	text-align: center;
+	}
+	
+	.container .wrap .center .notice .notice01 {
+	margin: 5px;
+	display: inline-block; 
+	/* div 안의 두 요소를 가운데로 정렬 시킬 때 : 상위 div 에는 text-align: center; 기입 */
+	/* display: inline-block; 여백 생김 = float 으로 해결 */
+	}
+	
+	.container .wrap .center .notice .notice01 img {
+	width: 20px;
+	height: 20px;
+	}
+	
+	/* bottom */
+	.container .wrap .bottom {
+	width: 100%;
+	height: 32%;
+	margin: 0 auto;
+	background: orange;
+	text-align: center;
+	}
+	
+	.container .wrap .bottom .eventslider img {
+	/* height: 184.8px; */
+	height: 80.3%;
+	}

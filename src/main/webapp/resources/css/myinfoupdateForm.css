@@ -1,0 +1,32 @@
+	a {
+    text-decoration: none;
+    color: black;
+	}
+	
+	td { 
+	text-align: center;
+	font-size: 18px;
+	width: 80px;
+    height: 80px;
+	}
+	
+	.center {
+	margin-top: 50px;
+	}
+
+	.center .infowrap {
+	margin: 0 auto;
+	}
+
+	.center .infowrap thead {
+	background: #ffc107;
+	}
+	
+	.center .infowrap .active {
+	background: #ffa500a1;
+	}
+	
+	.center .infowrap .activecontent {
+	background: #ffa500a1;
+	height: 450px;
+	}

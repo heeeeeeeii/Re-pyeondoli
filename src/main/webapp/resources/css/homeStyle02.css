@@ -1,0 +1,100 @@
+    .wrap{ /*전체*/
+      width: 1400px;
+      height: 603px;
+      margin: 0 auto;
+      border: 2px solid black;
+      display:table;
+    }
+    .wrap .left{ /*왼쪽*/
+      width: 1000px;
+      height: 500px;
+      float: left;
+    }
+    .wrap .right{ /*오른쪽*/
+      width: 270px;
+      height: 600px;
+      float:right;
+      margin : 0 1px;      
+      display: inline-block;
+    }
+    table{ /*왼쪽 가격표*/
+      border-collapse: collapse;
+      width: 1130px;
+    }
+    h2{ /*왼쪽 프리지아*/
+      font-size: 20px;
+      text-align: center;
+    }
+    th,td{}
+    table th{ /*번호,상품명,단가,수량,금액,비고*/
+      background-color: skyblue;
+      border-bottom: 2px solid black;
+      padding: 0.5em 0;
+      font-size: 20px;
+    }
+    th:nth-child(1){width: 50px;} /*번호,상품명,단가,수량,금액,비고 칸크기*/
+    th:nth-child(2){width: 250px;}
+    th:nth-child(3){width: 150px;}
+    th:nth-child(4){width: 100px;}
+    th:nth-child(5){}
+    th:nth-child(6){}
+
+    td{ /*표 내용*/
+      padding: 0.5em 0;
+      font-size: 13px;
+      border-bottom: 1px solid #aaa;
+      text-align: center;
+    }
+    .wrap .left .aa h1{ /*객층이나 작업을 선택하십시오.*/
+      background-color: #C0C0C0;
+      width : 1130px;
+      font-size: 15px;
+      margin: 0 auto;
+    }
+    .wrap .left .aa p{ /*왼쪽 공백*/
+      border: 0px solid black;
+      width: 380px;
+      height: 285px;
+      float: left;
+      margin: 0 auto;
+      font-size: 45px;
+    }
+    .wrap .left .aa table{ /*합계,현금,거스름*/
+      width: 600px;
+      height: 290px;
+      float: right;
+    }
+    .wrap .sec{ /*아래 버튼 영역*/
+      float: left;
+      width: 1400px;
+      height: 150px;
+    }
+    .wrap .sec button{ /*아래 버튼*/
+      width: 200px;
+      height: 80px;
+      margin: 22px 10px 10px 20px;
+      float: left;
+    }
+    .wrap .right button{ /*오른쪽 버튼*/
+      width: 250px;
+      height: 50px;
+      margin: 5px 20px 5px 10px;
+      font-size: 15px;
+    }
+    .wrap .sec button:nth-child(1){background-color: silver;} /*오른쪽 버튼 색*/
+    .right button:nth-child(1){background-color: gray;} /*오른쪽 버튼 색*/
+    .right button:nth-child(2){background-color: purple;} /*오른쪽 버튼 색*/
+    .right button:nth-child(3){background-color: pink;} /*오른쪽 버튼 색*/
+    .right button:nth-child(4){background-color: coral;} /*오른쪽 버튼 색*/
+    .right button:nth-child(5){background-color: hotpink;} /*오른쪽 버튼 색*/
+    .right button:nth-child(6){background-color: green;} /*오른쪽 버튼 색*/
+    .right button:nth-child(7){background-color: crimson;} /*오른쪽 버튼 색*/
+    .right button:nth-child(8){background-color: skyblue;} /*오른쪽 버튼 색*/
+    .right button:nth-child(9){background-color: yellow;} /*오른쪽 버튼 색*/
+    .right button:nth-child(10){background-color: brown;} /*오른쪽 버튼 색*/
+    
+    .db{
+    height:250px;
+    width:1160px;   
+    overflow:scroll;
+    }
