@@ -8,7 +8,7 @@
 	
 	<!-- 회원 목록 -->
 	<select id="selectList" resultType="vo.MemberVO"> 
-		select id, pw, nickname, email, memimg, point, rsid, cartid from member order by id
+		select id, pw, nickname, email, memimg, point from member order by id
 	</select>
 
 	<!-- 로그인 -->
@@ -19,9 +19,9 @@
 	<!-- 회원가입 -->
 	<insert id="insert" parameterType="vo.MemberVO">>
 		insert into member
-		(id, pw, nickname, email, memimg, point, rsid, cartid) 
+		(id, pw, nickname, email, memimg, point) 
 		VALUES
-		(#{id}, #{pw}, #{nickname}, #{email}, #{memimg}, DEFAULT, #{rsid}, #{cartid})
+		(#{id}, #{pw}, #{nickname}, #{email}, #{memimg}, DEFAULT)
 	</insert>
 	
 	<!-- 아이디 중복확인 -->

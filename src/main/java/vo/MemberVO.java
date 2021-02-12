@@ -10,9 +10,6 @@ public class MemberVO {
 	private String email;
 	private String memimg;
 	private int point;
-	private String rsid;
-	private String cartid;
-	private String reviewid;
 	
 	private MultipartFile uploadfilef; // form �쓽 inputTag �쓽 媛� �쟾�떖諛쏄린 // �꽕�젙 �뙆�씪 �븘�슂
 
@@ -52,35 +49,16 @@ public class MemberVO {
 	public void setPoint(int point) {
 		this.point = point;
 	}
-	public String getRsid() {
-		return rsid;
-	}
-	public void setRsid(String rsid) {
-		this.rsid = rsid;
-	}
-	public String getCartid() {
-		return cartid;
-	}
-	public void setCartid(String cartid) {
-		this.cartid = cartid;
-	}
 	public MultipartFile getUploadfilef() {
 		return uploadfilef;
 	}
 	public void setUploadfilef(MultipartFile uploadfilef) {
 		this.uploadfilef = uploadfilef;
 	}
-	public String getReviewid() {
-		return reviewid;
-	}
-	public void setReviewid(String reviewid) {
-		this.reviewid = reviewid;
-	}
 	
 	@Override
 	public String toString() {
 		return "MemberVO [id=" + id + ", pw=" + pw + ", nickname=" + nickname + ", email=" + email + ", memimg="
-				+ memimg + ", point=" + point + ", rsid=" + rsid + ", cartid=" + cartid + ", reviewid=" + reviewid
-				+ ", uploadfilef=" + uploadfilef + "]";
+				+ memimg + ", point=" + point + ", uploadfilef=" + uploadfilef + "]";
 	}
 }

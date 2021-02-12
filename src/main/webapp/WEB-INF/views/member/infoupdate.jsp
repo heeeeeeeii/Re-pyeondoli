@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="resources/css/myinfoupdateForm.css"/>
 	
 	<!-- 제이쿼리 불러오기 -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="resources/js/jquery-3.2.1.min.js"></script>
 	
 	<script type="text/javascript">
 	function show_layer(div_name){
@@ -44,7 +44,7 @@
 		
 	}
 	
-	function nmSubmit() {
+	/* function nmSubmit() {
 		var nickname=$('#nickname').val();
 		
 		if (nickname.length<2) {
@@ -80,14 +80,21 @@
 				}
 			}); //ajax
 		} 
-	}
+	} */
 	</script>
 	
 	<style type="text/css">
-	/* 닉네임 변경  */	
-	.nick-wrap {  }
-	.nick-container01 { margin-bottom: 10px; }
-	.nick-container02 {   }
+	/* 공통 */
+	button:hover { background-color: aliceblue; }
+	input:focus { outline: 2px solid #ffbb008f; }
+	table { 
+		width: 100%;
+		border: 0;
+	 }
+	
+	.wrap {  }
+	.container01 { margin-bottom: 10px; }
+	.container02 {   }
 	
 	.input { 
     	height: 50px; 
@@ -97,24 +104,20 @@
 	.inp01 { width: 250px; }
 	.inp02 { width: 250px; }
 	
-	button:hover { background-color: aliceblue; }
-	
-	input:focus { outline: 2px solid #ffbb008f; }
-	
-	.nick-btn {
-    appearance: none;
-    background: ffc107;
-    color: lightgray;
-    margin: 0;
-    padding: 0.5rem 1rem;
-    text-align: center;
-    text-decoration: none;
-    border: none;
-    border-radius: 4px;
-    width: auto;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
-    cursor: pointer;
-    transition: 0.5s;
+	.btn {
+	    appearance: none;
+	    background: ffc107;
+	    color: lightgray;
+	    margin: 0;
+	    padding: 0.5rem 1rem;
+	    text-align: center;
+	    text-decoration: none;
+	    border: none;
+	    border-radius: 4px;
+	    width: auto;
+	    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
+	    cursor: pointer;
+	    transition: 0.5s;
 	}
 	</style>
 	
@@ -125,147 +128,172 @@
       	<!-- 회원정보 -->
       	<div class="infowrap">
       	
-      	<!--  -->
-      	<div id=div_01>
- 			<table width="407px" cellspacing="0" cellpadding="0" border="0" align="center">
-		  		<tr>
-		   			<td class="active">닉네임<br>변경</td>
-		   			<td><a href="javascript:show_layer('2');">비밀번호<br>변경</a></td>
-		   			<td><a href="javascript:show_layer('3');">이메일<br>변경</a></td>
-		   			<td><a href="javascript:show_layer('4');">이미지<br>변경</a></td>    
-		  		</tr>
-				
-				<tr>
-					<td class="activecontent" colspan=4 align=center>
-						<form>	
-							<div class="nick-wrap">
-								<div class="nick-container01">
-									<input class="input inp01" type="text" value="${myInfo.nickname}" readonly="readonly">
-								</div>
-								
-								<div class="nick-container02">
-									<input type="text" name="id" id="id" value="${myInfo.id}" hidden=true>
-									<input id="nickname" class="nickname input inp02" type="text" value="" placeholder="변경할 닉네임을 입력해주세요.">
-									<br>
-									<p id="nMessage"></p>
-									<br>
-									<button class="nick-btn" onclick="nmCheck();">중복확인</button>
-								</div>
-								
-								<div class="submitwrap">
-									<input type="button" onclick="return nmSubmit()" value="전송">&nbsp;&nbsp;
-							  		<input type="reset" value="취소">
-								</div>
-							</div>
-						</form>	
-					</td>
-				</tr>
-			</table>
-		</div>
-		
-		<!--  -->
-		<div id=div_02 style="display: none">
- 			<table width="407px" cellspacing="0" cellpadding="0" border="0" align="center">
-				<tr>
-					<td><a href="javascript:show_layer('1');">닉네임<br>변경</a></td>
-					<td class="active">비밀번호<br>변경</td>
-					<td><a href="javascript:show_layer('3');">이메일<br>변경</a></td>
-					<td><a href="javascript:show_layer('4');">이미지<br>변경</a></td> 
-				</tr>
-
-				<tr>
-					<td class="activecontent" colspan=4 align=center>
-					현재비밀번호입력 > 비밀번호변경
-					<%-- ${myInfo.pw} --%>
-					</td>
-				</tr>
-			</table>
-		</div>
-
-		<!--  -->
-		<div id=div_03 style="display: none">
-			<table width="407px" cellspacing="0" cellpadding="0" border="0" align="center">
-  				<tr>
-				   <td><a href="javascript:show_layer('1');">닉네임<br>변경</a></td>
-				   <td><a href="javascript:show_layer('2');">비밀번호<br>변경</a></td>
-				   <td class="active">이메일<br>변경</td>
-				   <td><a href="javascript:show_layer('4');">이미지<br>변경</a></td>    
-  				</tr>
-
-  				<tr>
-  					<td class="activecontent" colspan=4 align=center>
-  						<form>	
-							<div class="nick-wrap">
-								<div class="nick-container01">
-									<input class="input inp01" type="text" value="${myInfo.email}" readonly="readonly">
-								</div>
-								
-								<div class="nick-container02">
-									<input type="text" name="id" id="id" value="${myInfo.id}" hidden=true>
-									<input id="email" class="nickname input inp02" type="text" value="" placeholder="변경할 이메일을 입력해주세요.">
-									<br>
-									<p id="eMessage"></p>
-									<br>
-									<button class="nick-btn" onclick="emCheck();">중복확인</button>
-								</div>
-								
-								<div class="submitwrap">
-									<input type="button" onclick="return emSubmit()" value="전송">&nbsp;&nbsp;
-							  		<input type="reset" value="취소">
-								</div>
-							</div>
-						</form>	
-  					</td>
-  				</tr>
-			</table>
-		</div>
-		
-		<!--  -->
-		<div id=div_04 style="display: none">
- 			<table width="407px" cellspacing="0" cellpadding="0" border="0" align="center">
-  				<tr>
-					<td><a href="javascript:show_layer('1');">닉네임<br>변경</a></td>
-					<td><a href="javascript:show_layer('2');">비밀번호<br>변경</a></td>
-					<td><a href="javascript:show_layer('3');">이메일<br>변경</a></td>
-					<td class="active">이미지<br>변경</td>    
-  				</tr>
-
-  				<tr>
-  					<td class="activecontent" colspan=4 align=center>
-  						<form>	
-							<div class="nick-wrap">
-								<div class="nick-container01">
-									<img src="${myInfo.memimg}" width="70" height="80" class="select_img">
-									<input type="text" name="id" id="id" value="${myInfo.id}" hidden=true>
-									<input type="text" name="memimg" value="${myInfo.memimg}" hidden="true"><br>
-									<input type="file" name="uploadfilef" id="uploadfilef">
+	      	<!-- 닉네임 변경 -->
+	      	<div id=div_01>
+	 			<table>
+			  		<tr>
+			   			<td class="active">닉네임<br>변경</td>
+			   			<td><a href="javascript:show_layer('2');">비밀번호<br>변경</a></td>
+			   			<td><a href="javascript:show_layer('3');">이메일<br>변경</a></td>
+			   			<td><a href="javascript:show_layer('4');">이미지<br>변경</a></td>    
+			  		</tr>
+					
+					<tr>
+						<td class="activecontent" colspan=4 align=center>
+							<form action="nickupdate" method="post">	
+								<div class="wrap">
+									<div class="container01">
+										<input class="input inp01" type="text" value="${myInfo.nickname}" readonly="readonly">
+									</div>
 									
-									<script>
-						 			$("#uploadfilef").change(function(){
-						   				if(this.files && this.files[0]) {
-						    				var reader = new FileReader;
-						   					reader.onload = function(data) {
-						    					$(".select_img").attr("src", data.target.result)
-						    						.width(70).height(80); 
-						    					} // onload_function
-						   		 			reader.readAsDataURL(this.files[0]);
-						    			} // if
-						  			}); // change 
-					 				</script>	
+									<div class="container02">
+										<input type="text" name="id" id="id" value="${myInfo.id}" hidden=true>
+										<!-- <input id="nickname" class="nickname input inp02" type="text" value="" placeholder="변경할 닉네임을 입력해주세요."> -->
+										<input name="nickname" id="nickname" class="nickname input inp02" type="text" value="" placeholder="변경할 닉네임을 입력해주세요.">
+										<br>
+										<p id="nMessage"></p>
+										<br>
+										<button class="btn" onclick="nmCheck();">중복확인</button>
+									</div>
 									
+									<div class="submitwrap">
+										<input type="submit" value="확인">&nbsp;&nbsp; <!-- onclick="return nmSubmit()" -->
+								  		<input type="reset" value="취소">
+									</div>
 								</div>
-								
-								<div class="submitwrap">
-									<input type="button" onclick="return imgSubmit()" value="전송">&nbsp;&nbsp;
-							  		<input type="reset" value="취소">
-								</div>
-							</div>
-						</form>	
-  					</td>
-  				</tr>
-			</table>
-		</div>
+							</form>	
+						</td>
+					</tr>
+				</table>
+			</div>
+			<!-- //닉네임 변경 -->
 		
+			<!-- 비밀번호 변경 -->
+			<div id=div_02 style="display: none">
+	 			<table>
+					<tr>
+						<td><a href="javascript:show_layer('1');">닉네임<br>변경</a></td>
+						<td class="active">비밀번호<br>변경</td>
+						<td><a href="javascript:show_layer('3');">이메일<br>변경</a></td>
+						<td><a href="javascript:show_layer('4');">이미지<br>변경</a></td> 
+					</tr>
+	
+					<tr>
+						<td class="activecontent" colspan=4 align=center>
+							<form action="pwupdate" method="post">
+								<div class="wrap">
+									<div class="container01">
+										<input class="input inp01" type="text" value="${myInfo.pw}" hidden=true>
+										<input name="pw" id="pw" class="pw input inp02" type="text" value="" placeholder="현재 비밀번호를 입력해주세요.">
+									</div>
+									
+									<div class="container02">
+										<input type="text" name="id" id="id" value="${myInfo.id}" hidden=true>
+										<input name="pw" id="pw" class="pw input inp02" type="text" value="" placeholder="변경할 비밀번호를 입력해주세요.">
+										<br>
+										<p id="pMessage"></p>
+										<br>
+									</div>
+									
+									<div class="submitwrap">
+										<input type="button" onclick="pwCheck();" class="submit" value="확인">&nbsp;&nbsp; <!-- onclick="return nmSubmit()" -->
+								  		<input type="reset" value="취소">
+									</div>
+								</div>
+							</form>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<!-- //비밀번호 변경 -->
+
+			<!-- 이메일 변경 -->
+			<div id=div_03 style="display: none">
+				<table>
+	  				<tr>
+					   <td><a href="javascript:show_layer('1');">닉네임<br>변경</a></td>
+					   <td><a href="javascript:show_layer('2');">비밀번호<br>변경</a></td>
+					   <td class="active">이메일<br>변경</td>
+					   <td><a href="javascript:show_layer('4');">이미지<br>변경</a></td>    
+	  				</tr>
+	
+	  				<tr>
+	  					<td class="activecontent" colspan=4 align=center>
+	  						<form>	
+								<div class="wrap">
+									<div class="container01">
+										<input class="input inp01" type="text" value="${myInfo.email}" readonly="readonly">
+									</div>
+									
+									<div class="container02">
+										<input type="text" name="id" id="id" value="${myInfo.id}" hidden=true>
+										<input id="email" class="nickname input inp02" type="text" value="" placeholder="변경할 이메일을 입력해주세요.">
+										<input id="email" class="nickname input inp02" type="text" value="" placeholder="인증번호를 입력해주세요.">
+										<br>
+										<p id="eMessage"></p>
+										<br>
+										<button class="btn" onclick="emCheck();">인증번호 발송</button>
+									</div>
+									
+									<div class="submitwrap">
+										<!-- <input type="button" onclick="return emSubmit()" value="전송">&nbsp;&nbsp; -->
+										<input type="button" class="submit" value="전송">&nbsp;&nbsp;
+								  		<input type="reset" value="취소">
+									</div>
+								</div>
+							</form>	
+	  					</td>
+	  				</tr>
+				</table>
+			</div>
+			<!-- //이메일 변경 -->
+		
+			<!-- 프로필 사진 변경 -->
+			<div id=div_04 style="display: none">
+	 			<table>
+	  				<tr>
+						<td><a href="javascript:show_layer('1');">닉네임<br>변경</a></td>
+						<td><a href="javascript:show_layer('2');">비밀번호<br>변경</a></td>
+						<td><a href="javascript:show_layer('3');">이메일<br>변경</a></td>
+						<td class="active">이미지<br>변경</td>    
+	  				</tr>
+	
+	  				<tr>
+	  					<td class="activecontent" colspan=4 align=center>
+	  						<form>	
+								<div class="wrap">
+									<div class="container01">
+										<img src="${myInfo.memimg}" width="70" height="80" class="select_img">
+										<input type="text" name="id" id="id" value="${myInfo.id}" hidden=true>
+										<input type="text" name="memimg" value="${myInfo.memimg}" hidden="true"><br>
+										<input type="file" name="uploadfilef" id="uploadfilef">
+										
+										<script>
+							 			$("#uploadfilef").change(function(){
+							   				if(this.files && this.files[0]) {
+							    				var reader = new FileReader;
+							   					reader.onload = function(data) {
+							    					$(".select_img").attr("src", data.target.result)
+							    						.width(70).height(80); 
+							    					} // onload_function
+							   		 			reader.readAsDataURL(this.files[0]);
+							    			} // if
+							  			}); // change 
+						 				</script>	
+										
+									</div>
+									
+									<div class="submitwrap">
+										<input type="button" onclick="return imgSubmit()" value="전송">&nbsp;&nbsp;
+								  		<input type="reset" value="취소">
+									</div>
+								</div>
+							</form>	
+	  					</td>
+	  				</tr>
+				</table>
+			</div>
+			<!-- 프로필 사진 변경 -->
       	</div>
 	</div>
 </body>

@@ -82,8 +82,24 @@ public class MemberController {
 			mv.addObject("fCode", "PF");
 		}
 		// System.out.println("vo***"+mvo);
-		mv.setViewName("jsonView");
+		/* mv.setViewName("jsonView"); */
+		mv.setViewName("redirect:infoupdatef");
+		return mv;
+	}
+	
+	@RequestMapping(value = "/pwupdate")
+	public ModelAndView pwupdate(ModelAndView mv, HttpServletRequest request, MemberVO mvo) throws IOException {
 		
+		memberservice.pwupdate(mvo);
+		
+		if (memberservice.pwupdate(mvo) > 0) {
+			mv.addObject("fCode", "PS");
+		} else {
+			mv.addObject("fCode", "PF");
+		}
+		// System.out.println("vo***"+mvo);
+		/* mv.setViewName("jsonView"); */
+		mv.setViewName("member/infoupdate");
 		return mv;
 	}
 	

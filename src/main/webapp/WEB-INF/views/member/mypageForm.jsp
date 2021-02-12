@@ -10,6 +10,10 @@
 	<title>마이페이지</title>
 	<link rel="stylesheet" type="text/css" href="resources/css/mypageForm.css"/>
 	
+	<style>
+	.reviewcontent { text-align: center; }
+	</style>
+	
 	<%@ include file="../header.jsp" %>
 </head>
 <body>
@@ -95,12 +99,12 @@
 		        	
 		        	<tbody>
 		                <tr>
-		                	<!-- 아직 작성한 리뷰가 없습니다.  -->
+		                	<td colspan="3" class="reviewcontent">아직 작성한 리뷰가 없습니다.</td>
 		                    <!-- <td colspan="3">
 		                    </td> -->
+		                    <!-- <td>　</td>
 		                    <td>　</td>
-		                    <td>　</td>
-		                    <td>　</td>
+		                    <td>　</td> -->
 		                </tr>
 		        	</tbody>
 		        </table>	     

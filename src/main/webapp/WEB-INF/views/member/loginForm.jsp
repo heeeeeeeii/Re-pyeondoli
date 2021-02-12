@@ -42,8 +42,6 @@
             <form id="register" action="" class="input-group">
                 <input type="email" class="input-field" placeholder="아이디" required>
                 <input type="password" class="input-field" placeholder="비밀번호" required>
-                <input type="password" class="input-field" placeholder="예약 고유번호" hidden>
-                <input type="password" class="input-field" placeholder="장바구니 고유번호" hidden>
                 <!-- 이용약관 동의 -->
                 <!-- <input type="checkbox" class="checkbox"><span>Terms and conditions</span> --> 
                 <button class="submit join">회원가입</button>
