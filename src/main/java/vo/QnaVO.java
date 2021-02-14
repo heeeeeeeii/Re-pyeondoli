@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 import org.springframework.web.multipart.MultipartFile;
 
-public class QuestionVO {
+public class QnaVO {
 	
 	private int qnseq;
 	private String qntitle;

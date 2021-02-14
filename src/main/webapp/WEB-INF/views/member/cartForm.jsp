@@ -9,9 +9,50 @@
 	
 	<link rel="stylesheet" href="resources/css/cartForm.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	
 	<title>장바구니</title>
 	
+	<script>
+	function allCheckFunc( obj ) {
+		$("[name=check]").prop("checked", $(obj).prop("checked") );
+	}
+	
+	/* 체크박스 체크시 전체선택 체크 여부 */
+	function oneCheckFunc( obj )
+	{
+		var allObj = $("[name=allcheck]");
+		var objName = $(obj).attr("name");
+	
+		if( $(obj).prop("checked") )
+		{
+			checkBoxLength = $("[name="+ objName +"]").length;
+			checkedLength = $("[name="+ objName +"]:checked").length;
+	
+			if( checkBoxLength == checkedLength ) {
+				allObj.prop("checked", true);
+			} else {
+				allObj.prop("checked", false);
+			}
+		}
+		else
+		{
+			allObj.prop("checked", false);
+		}
+	}
+	
+	$(function(){
+		$("[name=allcheck]").click(function(){
+			allCheckFunc( this );
+		});
+		$("[name=check]").each(function(){
+			$(this).click(function(){
+				oneCheckFunc( $(this) );
+			});
+		});
+	});
+	</script>
+  	
 	<%@ include file="../header.jsp" %>
 </head>
 <body>
@@ -19,17 +60,17 @@
 		<h2 class="header_text">장바구니</h2>
 		
 		<div class="header2">
-			<input class="allcheck" type="checkbox" name="전체선택" value="전체선택">
+			<input class="allcheck" type="checkbox" name="allcheck" id="allcheck" value="전체선택">
 			<h2 class="header2_text">전체선택</h2>
 	    </div>
 	
 		<h3 class="top_text">장바구니는 최대 10개만 보관되며 판매 종료 시 삭제됩니다.</h3>
 
 		<div class="main">
-			<h2 class="main_alltext">총 --개</h2>
+			<h2 class="main_alltext">총 --개</h2> <!-- 개수 불러오기 -->
 			
 			<div class="box">
-				<input class="box_check" type="checkbox" name="선택" value="">
+				<input class="box_check" type="checkbox" name="check" id="check" value="">
         		
         		<div class="box_1">
 					<a href="#">

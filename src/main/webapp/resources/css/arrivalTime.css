@@ -1,20 +1,11 @@
 .search__input{
   width: 300px;
   height: 40px;
-  background-color: #ffbb0033;
-  decoration: none;
   margin-top: 70px;
   font-size: 18px;
-  margin-left: 5px;
 }
 
 .search_button{
-  width: 70px;
-  height: 40px;
-  background-color: #ffbb0033;
-  color: #999;
-  font-size: 16px;
-  margin-top: 70px;
 }
 
 .content {

@@ -103,6 +103,12 @@ public class MemberController {
 		return mv;
 	}
 	
+	@RequestMapping(value = "/joinf")
+	public ModelAndView joinf(ModelAndView mv) {
+		mv.setViewName("member/joinForm");
+		return mv;
+	}
+	
 	@RequestMapping(value = "/loginf")
 	public ModelAndView loginf(ModelAndView mv) {
 		mv.setViewName("member/loginForm");
@@ -145,12 +151,6 @@ public class MemberController {
 	@RequestMapping(value = "/eventf")
 	public ModelAndView eventf(ModelAndView mv) {
 		mv.setViewName("member/eventForm");
-		return mv;
-	}
-	
-	@RequestMapping(value = "/receivingf")
-	public ModelAndView receivingf(ModelAndView mv) {
-		mv.setViewName("member/receivingTime");
 		return mv;
 	}
 	
