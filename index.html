@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"> <!-- 화면 비율에 맞춰 화면에 출력 -->
+    <title>index</title>
+    
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/slick.css">
+    
+    <script src="js/index.js" defer></script> <!-- defer = 파일 로드 시간 방지 -->
+    <style>
+        :root {
+            
+        }
+        
+        body {height: 100vh}
+        
+        .clear {clear:both;}
+        
+        #header {height: 15%;}
+        
+        #cont_banner {clear: both; float: left; width: 100%; height: 35%; background: #bbdefb;}
+        #cont_center {float: left; width: 50%; height: 35%; background: #6cbeff;}
+        #cont_right {float: left; width: 50%; height: 35%; background: #789bb9;}
+        
+        #footer {clear: both; height: 15%; background: #90caf9;}
+        .footer {}
+        
+        /* 컨테이너 */
+        .container {
+            display: block;
+            position: relative;
+            margin: 0 auto; 
+        }
+        
+        .nav {
+            background: #fff;
+            display: flex; /* 가로 정렬 */
+            justify-content: space-between; /* 같은 중심축에 공간 사이에 간격 넣기 */
+            align-items: center; /* 수직축 가운데 정렬 */
+            padding: 39.9px 12px;
+            font-size: 20px;
+        }
+        .nav_logo {}
+        .nav_logo img {width: 15vh; height: 15vh;}
+        
+        .nav_menu {display: flex; padding-left: 0;}
+        .nav_menu li {margin-left: 5em;}
+        
+        .nav_info {display: flex; padding-left: 0;}
+        .nav_info li {padding: 8px 12px;}
+        
+        .nav_btn {position: absolute; right: 32px; font-size: 24px; display: none;}
+        
+        @media (max-width: 1220px){
+            .nav {
+                flex-direction: column;
+                align-items: flex-start; /* 왼쪽 정렬 */
+                padding: 41.5px 24px;   
+            }
+            .nav_menu {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+            .nav_menu li {
+                width: 100%;
+                text-align: center; /* 넓이가 넓어지면 텍스트는 왼쪽으로 자동 정렬 */
+                margin-left: 0;
+            }
+            .nav_info {
+                display: none;
+                justify-content: center; /* flex의 방향을 바꾸지 않고 정렬 */
+                width: 100%;
+            }
+            .nav_btn {
+                display: block;
+            }
+            
+            .nav_menu.active,
+            .nav_info.active {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container"> <!-- 가운데로 정렬 -->
+            <nav class="nav">
+                <div class="nav_logo">
+                    <a href="#"><span>로고</span>
+                        <!--<img src="img/logo.png" alt="">-->
+                    </a>
+                </div>
+                <!-- //nav_logo -->
+                
+                <ul class="nav_menu">
+                    <li><a href="#">메뉴1</a></li>
+                    <li><a href="#">메뉴2</a></li>
+                    <li><a href="#">메뉴3</a></li>
+                    <li><a href="#">메뉴4</a></li>
+                    <li><a href="#">메뉴5</a></li>
+                </ul>
+                <!-- //nav_menu -->
+
+                <ul class="nav_info">
+                    <li><a href="#">로그인</a></li> <!-- 마이페이지 / 로그아웃 -->
+                    <li><a href="#">회원가입</a></li>
+                </ul>
+                <!-- //nav_info -->
+                
+                <a href="#" class="nav_btn">
+                    <i class="xi-bars"></i>
+                </a>
+            </nav>
+            <!-- //nav -->      
+        </div>
+    </header>
+    <!-- //header -->
+    
+    <section id="cont_banner">
+        <div class="container">
+            <!-- slider -->
+            
+            <!-- //slider -->
+        </div>
+    </section>
+    <!-- //cont_left -->
+    <section id="cont_center">
+        <div class="container">
+        </div>
+    </section>
+    <!-- //cont_center -->
+    <section id="cont_right">
+        <div class="container">
+        </div>
+    </section>
+    <!-- //cont_right -->
+
+    <footer id="footer">
+        <div class="container">
+            <div class="footer">
+            
+            </div>
+        </div>    
+    </footer>
+    <!-- //footer -->
+</body>
+</html>
