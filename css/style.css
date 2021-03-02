@@ -35,7 +35,7 @@
     .clear {clear:both;}
     .tit {font-size: 20px; color: #2f7fa6; padding: 10px; text-align: center;}
 
-    #header {height: 15%;}
+    #header {/*height: 15%;*/ /*height: 103.5px;*/ height: 78px;}
 
     #cont_banner {
         clear: both; float: left; width: 100%; 
@@ -45,7 +45,7 @@
     #cont_left {float: left; width: 50%; height: 264px;     overflow: hidden; /*height: 35%;*/}
     #cont_right {float: left; width: 50%; height: 264px; /*height: 35%;*/ background: #789bb9;}
 
-    #footer {clear: both; height: 113px; /*height: 15%;*/ background: #90caf9;}
+    #footer {clear: both; /*height: 15%;*/ /*height: 103.5px;*/ height: 78px; background: #90caf9;}
     .footer {}
 
     /* 컨테이너 */
