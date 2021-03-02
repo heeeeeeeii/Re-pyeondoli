@@ -8,4 +8,4 @@
 - [ ] 테이블 내용 한줄효과 넣기
 - [ ] 슬라이드 화살표 위치 조정
 
-# https://soheeoott.github.io/Re-pyeondoli/index.html
+https://soheeoott.github.io/Re-pyeondoli/index.html
