@@ -14,6 +14,8 @@
         cursor: pointer;
         display: block;
         z-index: 1;
+        border-radius: 100%;
+        background: white;
     }
     .post-slider .next {
         position: absolute; top: 50%; right: 30px;
@@ -21,6 +23,8 @@
         cursor: pointer;    
         display: block;
         z-index: 1;
+        border-radius: 100%;
+        background: white;
     }
     .post-slider .post-wrapper {
         /*border: 1px dashed red;*/
@@ -36,11 +40,11 @@
     }
     .post-slider .post-wrapper i {
         font-size: 13px;
-        padding: 8px 0;
+        padding: 5px 0;
     }
     .post-slider .post-wrapper .post {
         width: 200px;
-        height: 252px;
+        height: 242px;
         display: inline-block;
         background: white;
         border-radius: 5px;

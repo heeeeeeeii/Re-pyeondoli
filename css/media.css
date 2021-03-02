@@ -47,7 +47,15 @@
 
     /* 화면 너비 0 ~ 960px */
     @media (max-width: 960px){
+        /*  */
+    }
 
+    /* 화면 너비 0 ~ 850px */
+    @media (max-width: 850px){
+        /*  */
+        .col_wrap table > .rcont_col {
+            display: none;
+        }
     }
 
     /* 화면 너비 0 ~ 768px */

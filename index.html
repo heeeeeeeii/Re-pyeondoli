@@ -12,67 +12,117 @@
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/slick-custom.css">
     <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/header.css">
     
+    <!-- defer = 파일 로드 시간 방지 -->
     <script src="js/jquery.min_1.12.4.js"></script>
     <!--<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>-->
-    <script src="js/slick.min.js" defer></script> <!-- defer = 파일 로드 시간 방지 -->
-    <script src="js/index.js"></script>
+    <script src="js/slick.min.js"></script> 
+    
+    <style>
+        .cont_left {padding: 15px;}
+        .col_txt {
+            font-size: 18px;
+            color: #2f7fa6;
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+            border-bottom: 1px dashed #dbdbdb;
+        }
+        .col_wrap {position: relative;}
+        .col_wrap li {
+            position: relative;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding-left: 8px;
+        }
+        .col_wrap li:before {
+            content: '';
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: #449ce2;
+            position: absolute;
+            left: 0;
+            top: 6px;
+        }
+        .col_wrap table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .col_wrap thead, th, td {
+            padding: 5px;
+        }
+        .col_wrap thead .rtit {word-break: keep-all;}
+        .col_wrap thead .rdate {word-break: keep-all;}
+        .col_wrap thead .rcount {word-break: keep-all;}
+        .col_wrap th {
+            font-weight: normal;
+            background: lightgray;
+            color: gray;
+        }
+        .col_wrap td {
+            text-align: center;
+            border-collapse: collapse;
+        }
+        .col_wrap tr:hover {
+            background: aliceblue;
+        }
+        
+        .col_wrap .ftd {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
     
     <script>
-        $(function(){
-            const btn = document.querySelector('.nav_btn'); /* class 가 nav_btn 찾아 할당 */
-            const menu = document.querySelector('.nav_menu');
-            const info = document.querySelector('.nav_info');
-
-            btn.addEventListener('click', () => {
-            menu.classList.toggle('active'); /* 클릭시 active 추가, 존재하면 제거 */
-            info.classList.toggle('active');
-            }) /* 클릭 이벤트 */
-            
-            $('.post-wrapper').slick({
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 3000,
-                prevArrow: $('.prev'),
-                nextArrow: $('.next'),
-                responsive: [
-                    {
-                        breakpoint: 1024,
-                        settings: {
-                            slidesToShow: 3,
-                            slidesToScroll: 1,
-                            infinite: true,
-                            dots: true
-                        }
-                    },
-                    {
-                        breakpoint: 960,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1
-                        }
-                    },
-                    {
-                        breakpoint: 600,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
+    $(function(){
+        $('.post-wrapper').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            prevArrow: $('.prev'),
+            nextArrow: $('.next'),
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        /*dots: true*/
                     }
-                ]
-            });
+                },
+                {
+                    breakpoint: 960,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
         });
+    });
     </script>
 </head>
 <body>
     <div class="container">
         <header id="header">
+            
+            <!--
             <nav class="nav">
                 <ul class="nav_logo">
                     <li><a href=""><span>로고</span></a></li>
                 </ul>
-                <!-- //nav_logo -->
 
                 <ul class="nav_menu">
                     <li><a href="#">상품목록</a></li>
@@ -81,18 +131,17 @@
                     <li><a href="#">공지사항</a></li>
                     <li><a href="#">Q&amp;A</a></li>
                 </ul>
-                <!-- //nav_menu -->
 
                 <ul class="nav_info">
-                    <li><a href="#">로그인</a></li> <!-- 마이페이지 / 로그아웃 -->
+                    <li><a href="#">로그인</a></li> 
                     <li><a href="#">회원가입</a></li>
                 </ul>
-                <!-- //nav_info -->
-
+                
                 <a href="#" class="nav_btn">
                     <i class="xi-bars"></i>
                 </a>
             </nav>
+            -->
             <!-- //nav -->      
         </header>
         <!-- //header -->
@@ -153,6 +202,47 @@
         <!-- //cont_left -->
         <section id="cont_left">
             <div class="container">
+                <div class="cont_left">
+                    <h4 class="col_txt">후기</h4>
+                        <div class="col_wrap">
+                            <!--<ul>
+                                <li>랄라블라랄라블라랄라블라</li>
+                                <li>랄라블라랄라블라랄라블라</li>
+                                <li>랄라블라랄라블라랄라블라</li>
+                            </ul>
+                            <a href="#" class="more" title="더 보기">더보기</a>-->
+                            <table>
+                                <colgroup>
+                                    <col class="rtit_col" style="width: 90%;">
+                                    <col class="rcount_col" style="width: 10%;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="rtit">제목</th>
+                                        <th class="rcount">조회수</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="ftd">블라블라블라블라블라블라블라블라블라블라블라블라</span></td>
+                                        <td class="rcount_column">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="ftd">블라블라블라블라블라블라블라블라블라블라블라블라</span></td>
+                                        <td class="rcount_column">1</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="ftd">블라블라블라블라블라블라블라블라블라블라블라블라</span></td>
+                                        <td class="rcount_column">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="ftd">블라블라블라블라블라블라블라블라블라블라블라블라</span></td>
+                                        <td class="rcount_column">3</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
             </div>
         </section>
         <!-- //cont_center -->
