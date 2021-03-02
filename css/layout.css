@@ -1,0 +1,35 @@
+    #header {
+        /*height: 10%;*/
+        height: 75.3px;
+    }
+
+    #cont_banner {
+        clear: both; float: left; width: 100%; 
+        /*height: 40%; */
+        height: 302px;
+        background: #bbdefb; overflow: hidden;
+    }
+    #cont_left {
+        float: left; width: 50%; 
+        /*height: 40%;*/
+        height: 302px;
+        overflow: hidden; 
+    }
+    #cont_right {
+        float: left; width: 50%; 
+        /*height: 40%; */
+        height: 302px;
+        background: #789bb9;
+        overflow: hidden;
+    }
+
+    #footer {
+        clear: both; 
+        /*height: 10%;*/
+        height: 75.3px;
+        background: #90caf9;
+    }
+    .footer {    
+        text-align: center;
+        line-height: 4.66;
+    }

@@ -3,21 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"> <!-- 화면 비율에 맞춰 화면에 출력 -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- 항상 최신 버전의 호환성 모드로 랜더링 -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!-- 항상 최신 버전의 호환성 모드로 랜더링 -->
     <title>index</title>
     
-    <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/slick-custom.css">
     <link rel="stylesheet" href="css/media.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/layout.css">
     
     <!-- defer = 파일 로드 시간 방지 -->
     <script src="js/jquery.min_1.12.4.js"></script>
     <!--<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>-->
     <script src="js/slick.min.js"></script> 
+    
+    <style>
+        /* 햄버거 메뉴 */
+        .nav {
+            display: flex; /* 가로 정렬 */
+            justify-content: space-around; /* 같은 중심축에 공간 사이에 간격 넣기 */
+            align-items: center; /* 수직축 가운데 정렬 */
+            font-size: 18px;
+            height: inherit;
+        }
+        .nav .nav_logo { }
+        .nav .nav_logo img {width: 15vh; height: 15vh;}
+        .nav .nav_menu {display: flex; padding-left: 0;}
+        .nav .nav_menu li {padding: 8px 28px 8px 28px;}
+        .nav .nav_info {
+            display: flex;
+            padding-left: 0;
+        }
+        .nav .nav_info li {padding: 8px 12px;}
+        .nav .nav_btn {
+            position: absolute; 
+            right: 32px; font-size: 24px; display: none;
+        }
+        /* //햄버거 메뉴 */
+    </style>
     
     <style>
         .cont_left {padding: 15px;}
@@ -53,12 +79,13 @@
             border-collapse: collapse;
         }
         .col_wrap thead, th, td {
-            padding: 5px;
+            padding: 8px;
         }
         .col_wrap thead .rtit {word-break: keep-all;}
         .col_wrap thead .rdate {word-break: keep-all;}
         .col_wrap thead .rcount {word-break: keep-all;}
         .col_wrap th {
+            word-break: keep-all;
             font-weight: normal;
             background: lightgray;
             color: gray;
@@ -66,15 +93,16 @@
         .col_wrap td {
             text-align: center;
             border-collapse: collapse;
+            word-break: keep-all;
+            width: 90%;
         }
-        .col_wrap tr:hover {
-            background: aliceblue;
-        }
-        
-        .col_wrap .ftd {
+        .col_wrap span {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+        }
+        .col_wrap tr:hover {
+            background: aliceblue;
         }
     </style>
     
@@ -117,180 +145,177 @@
     </script>
 </head>
 <body>
-    <div class="container">
-        <header id="header">
-            
-            <!--
-            <nav class="nav">
-                <ul class="nav_logo">
-                    <li><a href=""><span>로고</span></a></li>
-                </ul>
+    <header id="header">
+        <nav class="nav">
+            <ul class="nav_logo">
+                <li>
+                    <a href=""><span>로고</span></a>
+                </li>
+            </ul>
 
-                <ul class="nav_menu">
-                    <li><a href="#">상품목록</a></li>
-                    <li><a href="#">후기</a></li>
-                    <li><a href="#">공유</a></li>
-                    <li><a href="#">공지사항</a></li>
-                    <li><a href="#">Q&amp;A</a></li>
-                </ul>
+            <ul class="nav_menu">
+                <li><a href="#">상품목록</a></li>
+                <li><a href="#">후기</a></li>
+                <li><a href="#">공유</a></li>
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">Q&amp;A</a></li>
+            </ul>
 
-                <ul class="nav_info">
-                    <li><a href="#">로그인</a></li> 
-                    <li><a href="#">회원가입</a></li>
-                </ul>
+            <ul class="nav_info">
+                <li><a href="#">로그인</a></li> 
+                <li><a href="#">회원가입</a></li>
+            </ul>
+
+            <a href="#" class="nav_btn">
+                <i class="xi-bars"></i>
+            </a>
+        </nav>
+        <!-- //nav -->      
+    </header>
+    <!-- //header -->
+
+    <section id="cont_banner">
+        <div class="page-wrapper">
+            <div class="post-slider">
+                <h1 class="ir_su">진행중인 이벤트</h1>
                 
-                <a href="#" class="nav_btn">
-                    <i class="xi-bars"></i>
-                </a>
-            </nav>
-            -->
-            <!-- //nav -->      
-        </header>
-        <!-- //header -->
+                <!-- < > -->
+                <i class="xi-angle-left prev"></i>
+                <i class="xi-angle-right next"></i>
 
-        <section id="cont_banner">
-            <div class="page-wrapper">
-                <div class="post-slider">
-                    <h1 class="ir_su">진행중인 이벤트</h1>
-
-                    <!-- < > -->
-                    <i class="xi-angle-left prev"></i>
-                    <i class="xi-angle-right next"></i>
-
-                    <div class="post-wrapper">
-                        <div class="post">
-                            <img src="img/banner1.png" alt="" class="slider-image">
-                            <div class="post-info">
-                                <i class="xi-calendar-check">
-                                    <span>03월 02일</span>
-                                </i>
-                                <h4><a href="#">블라블라블라블라블라블라블라블라블라블라블라블라</a></h4>
-                            </div>
-                        </div>
-
-                        <div class="post">
-                            <img src="img/banner1.png" alt="" class="slider-image">
-                            <div class="post-info">
-                                <i class="xi-calendar-check">
-                                    <span>03월 02일</span>
-                                </i>
-                                <h4><a href="#">블라블라블라블라블라블라블라블라블라블라블라블라</a></h4>
-                            </div>
-                        </div>
-
-                        <div class="post">
-                            <img src="img/banner1.png" alt="" class="slider-image">
-                            <div class="post-info">
-                                <i class="xi-calendar-check">
-                                    <span>03월 02일</span>
-                                </i>
-                                <h4><a href="#">블라블라블라블라블라블라블라블라블라블라블라블라</a></h4>
-                            </div>
-                        </div>
-                        
-                        <div class="post">
-                            <img src="img/banner1.png" alt="" class="slider-image">
-                            <div class="post-info">
-                                <i class="xi-calendar-check">
-                                    <span>03월 02일</span>
-                                </i>
-                                <h4><a href="#">블라블라블라블라블라블라블라블라블라블라블라블라</a></h4>
-                            </div>
+                <div class="post-wrapper">
+                    <div class="post">
+                        <img src="img/banner1.png" alt="" class="slider-image">
+                        <div class="post-info">
+                            <i class="xi-calendar-check">
+                                <span>03월 02일</span>
+                            </i>
+                            <h4><a href="#">블라블라블라블라블라블라블라블라블라블라블라블라</a></h4>
                         </div>
                     </div>
-                </div>                        
-            </div>
-        </section>
-        <!-- //cont_left -->
-        <section id="cont_left">
-            <div class="container">
-                <div class="cont_left">
-                    <h4 class="col_txt">후기</h4>
-                        <div class="col_wrap">
-                            <table>
-                                <colgroup>
-                                    <col class="rtit_col" style="width: 90%;">
-                                    <col class="rcount_col" style="width: 10%;">
-                                </colgroup>
-                                <thead>
-                                    <tr>
-                                        <th class="rtit">제목</th>
-                                        <th class="rcount">조회수</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><span class="ftd">블라블라블라블라블라블라블라블라블라블라블라블라</span></td>
-                                        <td class="rcount_column">0</td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="ftd">블라블라블라블라블라블라블라블라블라블라블라블라</span></td>
-                                        <td class="rcount_column">1</td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="ftd">블라블라블라블라블라블라블라블라블라블라블라블라</span></td>
-                                        <td class="rcount_column">2</td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="ftd">블라블라블라블라블라블라블라블라블라블라블라블라</span></td>
-                                        <td class="rcount_column">3</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                </div>
-            </div>
-        </section>
-        <!-- //cont_center -->
-        <section id="cont_right">
-            <div class="container">
-                <div class="cont_right">
-                    <h4 class="col_txt">공유</h4>
-                        <div class="col_wrap">
-                            <table>
-                                <colgroup>
-                                    <col class="rtit_col" style="width: 90%;">
-                                    <col class="rcount_col" style="width: 10%;">
-                                </colgroup>
-                                <thead>
-                                    <tr>
-                                        <th class="rtit">제목</th>
-                                        <th class="rcount">조회수</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><span class="ftd">블라블라블라블라블라블라블라블라블라블라블라블라</span></td>
-                                        <td class="rcount_column">0</td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="ftd">블라블라블라블라블라블라블라블라블라블라블라블라</span></td>
-                                        <td class="rcount_column">1</td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="ftd">블라블라블라블라블라블라블라블라블라블라블라블라</span></td>
-                                        <td class="rcount_column">2</td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="ftd">블라블라블라블라블라블라블라블라블라블라블라블라</span></td>
-                                        <td class="rcount_column">3</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                </div>
-            </div>
-        </section>
-        <!-- //cont_right -->
 
-        <footer id="footer">
-            <div class="container">
-                <div class="footer">
+                    <div class="post">
+                        <img src="img/banner1.png" alt="" class="slider-image">
+                        <div class="post-info">
+                            <i class="xi-calendar-check">
+                                <span>03월 02일</span>
+                            </i>
+                            <h4><a href="#">블라블라블라블라블라블라블라블라블라블라블라블라</a></h4>
+                        </div>
+                    </div>
 
+                    <div class="post">
+                        <img src="img/banner1.png" alt="" class="slider-image">
+                        <div class="post-info">
+                            <i class="xi-calendar-check">
+                                <span>03월 02일</span>
+                            </i>
+                            <h4><a href="#">블라블라블라블라블라블라블라블라블라블라블라블라</a></h4>
+                        </div>
+                    </div>
+
+                    <div class="post">
+                        <img src="img/banner1.png" alt="" class="slider-image">
+                        <div class="post-info">
+                            <i class="xi-calendar-check">
+                                <span>03월 02일</span>
+                            </i>
+                            <h4><a href="#">블라블라블라블라블라블라블라블라블라블라블라블라</a></h4>
+                        </div>
+                    </div>
                 </div>
-            </div>    
-        </footer>
-        <!-- //footer -->
-    </div>
+            </div>                        
+        </div>
+    </section>
+    <!-- //cont_banner -->
+
+    <section id="cont_left">
+        <div class="cont_left">
+            <h4 class="col_txt">후기</h4>
+                <div class="col_wrap">
+                    <table>
+                        <colgroup>
+                            <col class="rtit_col" style="width: 90%;">
+                            <col class="rcount_col" style="width: 10%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="rtit">제목</th>
+                                <th class="rcount">조회수</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="ftd">블라블라블라블라블라블라블라블라블라블라블라블라</span></td>
+                                <td class="rcount_column">0</td>
+                            </tr>
+                            <tr>
+                                <td><span class="ftd">블라블라블라블라블라블라블라블라블라블라블라블라</span></td>
+                                <td class="rcount_column">1</td>
+                            </tr>
+                            <tr>
+                                <td><span class="ftd">블라블라블라블라블라블라블라블라블라블라블라블라</span></td>
+                                <td class="rcount_column">2</td>
+                            </tr>
+                            <tr>
+                                <td><span class="ftd">블라블라블라블라블라블라블라블라블라블라블라블라</span></td>
+                                <td class="rcount_column">3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        </div>
+    </section>
+    <!-- //cont_left -->
+
+    <section id="cont_right">
+        <div class="cont_right">
+            <h4 class="col_txt">공유</h4>
+                <div class="col_wrap">
+                    <table>
+                        <colgroup>
+                            <col class="rtit_col" style="width: 90%;">
+                            <col class="rcount_col" style="width: 10%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="rtit">제목</th>
+                                <th class="rcount">조회수</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="ftd">블라블라블라블라블라블라블라블라블라블라블라블라</span></td>
+                                <td class="rcount_column">0</td>
+                            </tr>
+                            <tr>
+                                <td><span class="ftd">블라블라블라블라블라블라블라블라블라블라블라블라</span></td>
+                                <td class="rcount_column">1</td>
+                            </tr>
+                            <tr>
+                                <td><span class="ftd">블라블라블라블라블라블라블라블라블라블라블라블라</span></td>
+                                <td class="rcount_column">2</td>
+                            </tr>
+                            <tr>
+                                <td><span class="ftd">블라블라블라블라블라블라블라블라블라블라블라블라</span></td>
+                                <td class="rcount_column">3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        </div>
+    </section>
+    <!-- //cont_right -->
+
+    <footer id="footer">
+        <div class="footer">
+            <address>
+                Copyright ©
+                <a href="#"><strong>sohee</strong></a>
+                All Rights Reserved.
+            </address>
+        </div>
+    </footer>
+    <!-- //footer -->
 </body>
 </html>

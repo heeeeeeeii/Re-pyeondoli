@@ -7,5 +7,6 @@
 - [ ] 테이블 반응형 적용
 - [ ] 테이블 내용 한줄효과 넣기
 - [ ] 슬라이드 화살표 위치 조정
+- [ ] 헤더 반응형 햄버거 메뉴 만들기
 
 https://soheeoott.github.io/Re-pyeondoli/index.html
