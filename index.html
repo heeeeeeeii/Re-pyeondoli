@@ -3,107 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"> <!-- 화면 비율에 맞춰 화면에 출력 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- 항상 최신 버전의 호환성 모드로 랜더링 -->
     <title>index</title>
     
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-custom.css">
+    <link rel="stylesheet" href="css/media.css">
     
-    <script src="js/index.js" defer></script> <!-- defer = 파일 로드 시간 방지 -->
-    <style>
-        :root {
+    <script src="js/jquery.min_1.12.4.js"></script>
+    <!--<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>-->
+    <script src="js/slick.min.js" defer></script> <!-- defer = 파일 로드 시간 방지 -->
+    <script src="js/index.js"></script>
+    
+    <script>
+        $(function(){
+            const btn = document.querySelector('.nav_btn'); /* class 가 nav_btn 찾아 할당 */
+            const menu = document.querySelector('.nav_menu');
+            const info = document.querySelector('.nav_info');
+
+            btn.addEventListener('click', () => {
+            menu.classList.toggle('active'); /* 클릭시 active 추가, 존재하면 제거 */
+            info.classList.toggle('active');
+            }) /* 클릭 이벤트 */
             
-        }
-        
-        body {height: 100vh}
-        
-        .clear {clear:both;}
-        
-        #header {height: 15%;}
-        
-        #cont_banner {clear: both; float: left; width: 100%; height: 35%; background: #bbdefb;}
-        #cont_center {float: left; width: 50%; height: 35%; background: #6cbeff;}
-        #cont_right {float: left; width: 50%; height: 35%; background: #789bb9;}
-        
-        #footer {clear: both; height: 15%; background: #90caf9;}
-        .footer {}
-        
-        /* 컨테이너 */
-        .container {
-            display: block;
-            position: relative;
-            margin: 0 auto; 
-        }
-        
-        .nav {
-            background: #fff;
-            display: flex; /* 가로 정렬 */
-            justify-content: space-between; /* 같은 중심축에 공간 사이에 간격 넣기 */
-            align-items: center; /* 수직축 가운데 정렬 */
-            padding: 39.9px 12px;
-            font-size: 20px;
-        }
-        .nav_logo {}
-        .nav_logo img {width: 15vh; height: 15vh;}
-        
-        .nav_menu {display: flex; padding-left: 0;}
-        .nav_menu li {margin-left: 5em;}
-        
-        .nav_info {display: flex; padding-left: 0;}
-        .nav_info li {padding: 8px 12px;}
-        
-        .nav_btn {position: absolute; right: 32px; font-size: 24px; display: none;}
-        
-        @media (max-width: 1220px){
-            .nav {
-                flex-direction: column;
-                align-items: flex-start; /* 왼쪽 정렬 */
-                padding: 41.5px 24px;   
-            }
-            .nav_menu {
-                display: none;
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-            }
-            .nav_menu li {
-                width: 100%;
-                text-align: center; /* 넓이가 넓어지면 텍스트는 왼쪽으로 자동 정렬 */
-                margin-left: 0;
-            }
-            .nav_info {
-                display: none;
-                justify-content: center; /* flex의 방향을 바꾸지 않고 정렬 */
-                width: 100%;
-            }
-            .nav_btn {
-                display: block;
-            }
-            
-            .nav_menu.active,
-            .nav_info.active {
-                display: flex;
-            }
-        }
-    </style>
+            $('.post-wrapper').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                prevArrow: $('.prev'),
+                nextArrow: $('.next'),
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 960,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
 </head>
 <body>
-    <header id="header">
-        <div class="container"> <!-- 가운데로 정렬 -->
+    <div class="container">
+        <header id="header">
             <nav class="nav">
-                <div class="nav_logo">
-                    <a href="#"><span>로고</span>
-                        <!--<img src="img/logo.png" alt="">-->
-                    </a>
-                </div>
+                <ul class="nav_logo">
+                    <li><a href=""><span>로고</span></a></li>
+                </ul>
                 <!-- //nav_logo -->
-                
+
                 <ul class="nav_menu">
-                    <li><a href="#">메뉴1</a></li>
-                    <li><a href="#">메뉴2</a></li>
-                    <li><a href="#">메뉴3</a></li>
-                    <li><a href="#">메뉴4</a></li>
-                    <li><a href="#">메뉴5</a></li>
+                    <li><a href="#">상품목록</a></li>
+                    <li><a href="#">후기</a></li>
+                    <li><a href="#">공유</a></li>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">Q&amp;A</a></li>
                 </ul>
                 <!-- //nav_menu -->
 
@@ -112,42 +88,88 @@
                     <li><a href="#">회원가입</a></li>
                 </ul>
                 <!-- //nav_info -->
-                
+
                 <a href="#" class="nav_btn">
                     <i class="xi-bars"></i>
                 </a>
             </nav>
             <!-- //nav -->      
-        </div>
-    </header>
-    <!-- //header -->
-    
-    <section id="cont_banner">
-        <div class="container">
-            <!-- slider -->
-            
-            <!-- //slider -->
-        </div>
-    </section>
-    <!-- //cont_left -->
-    <section id="cont_center">
-        <div class="container">
-        </div>
-    </section>
-    <!-- //cont_center -->
-    <section id="cont_right">
-        <div class="container">
-        </div>
-    </section>
-    <!-- //cont_right -->
+        </header>
+        <!-- //header -->
 
-    <footer id="footer">
-        <div class="container">
-            <div class="footer">
-            
+        <section id="cont_banner">
+            <div class="page-wrapper">
+                <div class="post-slider">
+                    <h1 class="ir_su">진행중인 이벤트</h1>
+
+                    <!-- < > -->
+                    <i class="xi-angle-left prev"></i>
+                    <i class="xi-angle-right next"></i>
+
+                    <div class="post-wrapper">
+                        <div class="post">
+                            <img src="img/banner1.png" alt="" class="slider-image">
+                            <div class="post-info">
+                                <i class="xi-calendar-check">
+                                    <span>03월 02일</span>
+                                </i>
+                                <h4><a href="#">블라블라블라블라블라블라블라블라블라블라블라블라</a></h4>
+                            </div>
+                        </div>
+
+                        <div class="post">
+                            <img src="img/banner1.png" alt="" class="slider-image">
+                            <div class="post-info">
+                                <i class="xi-calendar-check">
+                                    <span>03월 02일</span>
+                                </i>
+                                <h4><a href="#">블라블라블라블라블라블라블라블라블라블라블라블라</a></h4>
+                            </div>
+                        </div>
+
+                        <div class="post">
+                            <img src="img/banner1.png" alt="" class="slider-image">
+                            <div class="post-info">
+                                <i class="xi-calendar-check">
+                                    <span>03월 02일</span>
+                                </i>
+                                <h4><a href="#">블라블라블라블라블라블라블라블라블라블라블라블라</a></h4>
+                            </div>
+                        </div>
+                        
+                        <div class="post">
+                            <img src="img/banner1.png" alt="" class="slider-image">
+                            <div class="post-info">
+                                <i class="xi-calendar-check">
+                                    <span>03월 02일</span>
+                                </i>
+                                <h4><a href="#">블라블라블라블라블라블라블라블라블라블라블라블라</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>                        
             </div>
-        </div>    
-    </footer>
-    <!-- //footer -->
+        </section>
+        <!-- //cont_left -->
+        <section id="cont_left">
+            <div class="container">
+            </div>
+        </section>
+        <!-- //cont_center -->
+        <section id="cont_right">
+            <div class="container">
+            </div>
+        </section>
+        <!-- //cont_right -->
+
+        <footer id="footer">
+            <div class="container">
+                <div class="footer">
+
+                </div>
+            </div>    
+        </footer>
+        <!-- //footer -->
+    </div>
 </body>
 </html>

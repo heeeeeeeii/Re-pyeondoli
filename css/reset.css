@@ -1,5 +1,6 @@
     /* 여백 초기화 */
-    body, div, ul, li, dl, dd, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset, legend, p, select, table, th, td, tr, textarea, button, form, figure, figcaption {margin:0; padding:0;}
+    html, body, span, div, ul, li, dl, dd, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset, legend, p, a, select, table, th, td, tr, textarea, button, form, figure, figcaption,
+    address, strong, em, img, b, u, i, form, label, caption, tbody, tfoot, thead, article, aside, canvas, details, embed, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin:0; padding:0;}
 
     /* a 링크 초기화 */
     a {color: #222; text-decoration: none;}
@@ -21,7 +22,10 @@
     button {border: 0;}
 
     /* 반응형 이미지 */
-    img, video {width: 100%;}
+    img, video {
+        width: 100%;
+        height: auto;
+    }
     
     /* clearfix */ /* overflow:hidden 대체 */
     .clearfix {*zoom: 1;} /* ie7 지원 */

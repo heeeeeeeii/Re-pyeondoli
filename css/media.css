@@ -1,0 +1,84 @@
+    /* 화면 너비 0 ~ 1220px */
+    @media (max-width: 1220px){
+        .nav {
+            flex-direction: column;
+            align-items: flex-start; /* 왼쪽 정렬 */
+            /*padding: 41.5px 24px;*/
+            justify-content: center;
+        }
+        .nav_menu {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        .nav_menu li {
+            width: 100%;
+            text-align: center; /* 넓이가 넓어지면 텍스트는 왼쪽으로 자동 정렬 */
+            margin-left: 0;
+        }
+        .nav_info {
+            display: none;
+            justify-content: center; /* flex의 방향을 바꾸지 않고 정렬 */
+            width: 100%;
+        }
+        .nav_btn {
+            display: block;
+        }
+
+        .nav_menu.active,
+        .nav_info.active {
+            display: flex;
+        }
+        
+        .post-slider .post-wrapper .post .post-info h4 {
+            margin: 0 auto;
+            width: 240px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    /* 화면 너비 0 ~ 1024px */
+    @media (max-width: 1024px){
+        
+    }
+
+    /* 화면 너비 0 ~ 960px */
+    @media (max-width: 960px){
+
+    }
+
+    /* 화면 너비 0 ~ 768px */
+    @media (max-width: 768px){
+        
+    }
+
+    /* 화면 너비 0 ~ 600px */
+    @media (max-width: 600px){
+       
+    }
+
+    /* 화면 너비 0 ~ 480px */
+    @media (max-width: 480px){
+
+    }
+
+    /* 화면 너비 0 ~ 320px */
+    @media (max-width: 320px){
+        
+    }
+
+    /* 화면 너비 0 ~ 300px */
+    @media (max-width: 300px){
+        .post-slider .post-wrapper .post .post-info h4 {
+            width: 200px;
+        }
+    }
+    
+    @media (max-width: 240px){
+        .post-slider .post-wrapper .post .post-info h4 {
+            width: 110px;
+        }
+    }

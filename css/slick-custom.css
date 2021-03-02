@@ -1,0 +1,65 @@
+    /* 이미지 슬라이드 */
+    .slick-slide {
+        margin: 0 3px; /* 간격 조절 */
+    }
+
+    .post-slider {
+        position: relative;
+        /*border: 1px solid red;*/
+    }
+    .post-slider .slider-title {margin: 10px auto; text-align: center; font-size: 18px;}
+    .post-slider .prev {
+        position: absolute; top: 50%; left: 30px;
+        font-size: 2em; color: #789bb959;
+        cursor: pointer;
+        display: block;
+        z-index: 1;
+    }
+    .post-slider .next {
+        position: absolute; top: 50%; right: 30px;
+        font-size: 2em; color: #789bb959;
+        cursor: pointer;    
+        display: block;
+        z-index: 1;
+    }
+    .post-slider .post-wrapper {
+        /*border: 1px dashed red;*/
+        width: 84%;
+        height: 264px;
+        margin: 0 auto;
+        overflow: hidden;
+        padding: 5px 0 5px 0;
+    }
+    .post-slider .post-wrapper h1, h2, h3, h4, h5 {
+        margin: 5px;
+        font-size: 13px;
+    }
+    .post-slider .post-wrapper i {
+        font-size: 13px;
+        padding: 8px 0;
+    }
+    .post-slider .post-wrapper .post {
+        width: 200px;
+        height: 252px;
+        display: inline-block;
+        background: white;
+        border-radius: 5px;
+    }
+    .post-slider .post-wrapper .post .post-info {
+        /*border: 1px solid green;*/
+        height: 53px;
+        text-align: center;
+    }
+    .post-slider .post-wrapper .post .post-info h4 {
+        margin: 0 auto;
+    }
+    .post-slider .post-wrapper .post .post-info i > span {
+        padding: 1px;
+    }
+    .post-slider .post-wrapper .post .slider-image {
+        width: 100%;
+        height: 200px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+    /* //이미지 슬라이드 */
