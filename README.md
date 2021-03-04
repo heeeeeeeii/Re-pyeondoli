@@ -13,4 +13,4 @@
 - [x] 회원가입 화면
 - [x] 이용약관 화면
 
-https://soheeoott.github.io/Re-pyeondoli/index.html
+https://soheeoott.github.io/pyeondoli/index.html
