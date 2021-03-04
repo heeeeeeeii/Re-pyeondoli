@@ -25,6 +25,7 @@
 
     * {
         font-family: 'NanumBarunGothic', sans-serif;
+        /*-webkit-font-smoothing: antialiased;*/
     }
     /* //폰트설정 */
 
@@ -60,6 +61,8 @@
         height: auto;
     }
     
+    .clear {clear:both;}
+
     /* clearfix */ /* overflow:hidden 대체 */
     .clearfix {*zoom: 1;} /* ie7 지원 */
     .clearfix:before, .clearfix:after {

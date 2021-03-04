@@ -1,18 +1,30 @@
     #header {
+        position: fixed;
+        z-index: 999;
         /*height: 10%;*/
+        width: 100%;
         height: 75.3px;
+        background: white;
+        overflow: hidden;
+        /*box-shadow: 0 3px 3px rgba(0,0,0,.3);*/
     }
 
     #cont_banner {
         clear: both; float: left; width: 100%; 
         /*height: 40%; */
         height: 302px;
-        background: #bbdefb; overflow: hidden;
+        background: #d9d9d982; overflow: hidden;
+        margin-top: 75.3px;
     }
+
+    .cont_left {padding: 15px;}
+    .cont_right {padding: 15px;}
+
     #cont_left {
         float: left; width: 50%; 
         /*height: 40%;*/
         height: 302px;
+        background: antiquewhite;
         overflow: hidden; 
     }
     #cont_right {
@@ -23,13 +35,94 @@
         overflow: hidden;
     }
 
+    #center {
+            clear: both; float: left; height: 604px; 
+            margin-top: 75.3px; overflow:hidden;
+            background: aliceblue;
+            width: 100%;
+    }    
+
     #footer {
         clear: both; 
         /*height: 10%;*/
         height: 75.3px;
-        background: #90caf9;
-    }
-    .footer {    
         text-align: center;
         line-height: 4.66;
     }
+    .footer {    
+        
+    }
+
+    /* 로고 이미지 */
+    header .logo {float: left; text-indent: -9999em;}
+    header .logo img {
+        width: 75px; height: 75px; 
+        display: block;
+    }
+
+    /* 상단 */
+    header nav {float: right; margin-top: 13px;}
+    header nav ul {float: left;}
+    header nav ul li {float: left;}
+    header nav ul li a {
+        line-height: 56px;
+        font-size: 18px;
+    }
+
+    .menu li {margin-right: 29px;}
+    .icon li {margin-right: 25px;}
+    .info li {margin-right: 29px;}
+    .toggle {display: none; line-height: 56px;}
+    
+    /* 햄버거 메뉴 */
+    input[id="menuicon"] {
+        display: none;
+    }
+    input[id="menuicon"] + label { /* + : 인접요소 선택자 */
+        display: block;
+        width: 25px;
+        height: 25px;
+        position: relative;
+        cursor: pointer;
+    }
+    input[id="menuicon"] + label span {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        border-radius: 30px;
+        background: #000;
+        transition: all .35s;
+    }
+    input[id="menuicon"] + label span:nth-child(1) {
+        top: 0;
+    }
+    input[id="menuicon"] + label span:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%); 
+        /* 요소를 Y축으로 값만큼 이동 */
+        /* 정확한 가운데 영역으로 이동하기 위해 사용 */
+        /*
+            다른 방법
+            1) top:calc(50%-2.5px);
+            2) margin-top: 2.5px;
+        */
+    }
+    input[id="menuicon"] + label span:nth-child(3) {
+        bottom: 0;
+    }
+    input[id="menuicon"]:checked + label {z-index: 3;}
+    input[id="menuicon"]:checked + label span {}
+    input[id="menuicon"]:checked + label span:nth-child(1) {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg); /* 45도 회전 */
+    }
+    input[id="menuicon"]:checked + label span:nth-child(2) {
+        opacity: 0;
+    }
+    input[id="menuicon"]:checked + label span:nth-child(3) {
+        bottom: 50%;
+        transform: translateY(50%) rotate(-45deg);
+    }
+
+    input[id="menuicon"]:checked + label + .hide_nav {left: 0;}

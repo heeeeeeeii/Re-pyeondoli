@@ -1,0 +1,51 @@
+    /* 게시판 */
+    .col_txt {
+        font-size: 18px;
+        color: #2f7fa6;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+        border-bottom: 1px dashed #dbdbdb;
+    }
+    .col_wrap {position: relative;}
+    .col_wrap li {
+        position: relative;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        padding-left: 8px;
+    }
+    .col_wrap li:before {
+        content: '';
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: #449ce2;
+        position: absolute;
+        left: 0;
+        top: 6px;
+    }
+    .col_wrap table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .col_wrap thead, th, td {
+        padding: 8px;
+        word-break: keep-all;
+    }
+    .col_wrap th {
+        font-weight: normal;
+        background: lightgray;
+        color: gray;
+    }
+    .col_wrap td {
+        text-align: center;
+        width: 90%;
+    }
+    .col_wrap span {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .col_wrap tr:hover {
+        background: aliceblue;
+    }
