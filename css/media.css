@@ -29,7 +29,7 @@
         /*header .menu {display: none !important;}*/
         header nav {float: none; background: #fff;} /*padding: 0 15px;*/
         header nav ul {float: none;}
-        header .logo {float: none; padding : 0 0 20px 15px;}
+        header .logo {float: none;}
         
         .menu {display: none;}
         .menu li {float: none;}

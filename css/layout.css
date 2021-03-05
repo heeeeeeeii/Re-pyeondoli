@@ -54,7 +54,10 @@
     }
 
     /* 로고 이미지 */
-    header .logo {float: left; text-indent: -9999em;}
+    header .logo {
+        float: left; text-indent: -9999em;
+        padding: 0 0 0 15px;
+    }
     header .logo img {
         width: 75px; height: 75px; 
         display: block;

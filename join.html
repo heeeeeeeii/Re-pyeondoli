@@ -41,14 +41,29 @@
             border-bottom: 1px solid silver;
             font-size: 22px;
         }
+        .center p {
+            font-size: 13px;
+            line-height: 1;
+            margin: -10px 0 0 5px;
+            color: #f44336;
+        }
         .center form {
             padding: 0 40px;
             box-sizing: border-box;
         }
+        
+        .center .chk {
+            /*float: left;*/
+        }
+        .center .dchk {
+            float: left;
+            width: 20%;
+        }
+        
         .center .field {
             position: relative;
             border-bottom: 2px solid #adadad;
-            margin: 30px 0;
+            margin: 20px 0;
             font-size: 16px;
         }
         .center .field input {
@@ -80,23 +95,13 @@
         }
         .center .field input:focus ~ label,
         .center .field input:valid ~ label {
-            top: -5px;
+            /*top: -2px;*/
+            opacity: 0;
             color: #ffc320;
         }
         .center .field input:focus ~ span::before,
         .center .field input:valid ~ span::before {
             width: 100%;
-        }
-        
-        .center .find {
-            margin: -5px 0 20px 5px;
-            text-align: center;
-            color: #a6a6a6;
-            cursor: pointer;
-        }
-        .center .find:hover {
-            color: #ffc320;
-            text-decoration: underline;
         }
         
         input[type="submit"] {
@@ -124,25 +129,47 @@
                     <span></span>
                     <label for="">아이디</label>
                 </div>
+                <p>중복된 아이디</p>
                 <!-- //아이디 -->
+                
                 <div class="field">
                     <input type="password" required>
                     <span></span>
                     <label for="">비밀번호</label>
                 </div>
                 <!-- //비밀번호 -->
+                
+                <div class="field">
+                    <input type="password" required>
+                    <span></span>
+                    <label for="">비밀번호 확인</label>
+                </div>
+                <p>비밀번호 불일치</p>
+                <!-- //비밀번호 확인 -->
+                
                 <div class="field">
                     <input type="text" required>
                     <span></span>
                     <label for="">닉네임</label>
                 </div>
+                <p>중복된 닉네임</p>
                 <!-- //닉네임 -->
-                <div class="field">
+                
+                <div class="field chk" style="width: 80%;">
                     <input type="text" required>
                     <span></span>
                     <label for="">이메일</label>
                 </div>
+                <!--<button class="dchk">인증번호 전송</button>-->
+                
+                <div class="field">
+                    <input type="text" required>
+                    <span></span>
+                    <label for="">인증번호</label>
+                    <!--<button class="dchk">인증</button>-->
+                </div>
                 <!-- //이메일 -->
+                
                 <div class="field">
                     <input type="text" required>
                     <span></span>
