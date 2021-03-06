@@ -15,9 +15,10 @@
 2021-03-06
 - [x] 이미지 업로드 폼
 - [x] 이미지 drag and drop
+- [ ] drag and drop 시 파일명
 
 2021-03-07
 - [x] 이용약관 전체동의
 - [x] 이용약관 선택동의
-
+- [x] 아이디 비밀번호 찾기 화면
 https://soheeoott.github.io/pyeondoli/index.html
