@@ -14,6 +14,6 @@
 
 2021-03-06
 - [x] 이미지 업로드 폼
-- [] 이미지 drop and drag
+- [ ] 이미지 drag and drop
 
 https://soheeoott.github.io/pyeondoli/index.html
