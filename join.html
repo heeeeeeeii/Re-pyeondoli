@@ -23,70 +23,65 @@
     </script>
     
     <style>
-        .center {
+        /* 입력 폼 */
+        .h1 {
+            text-align: center;
+            margin: 20px 0 20px 0;
+            font-size: 22px;
+        }
+        #form_wrap {
             background: white;
             margin: 0 auto;
             
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%); /* 가운데 배치 */
-            
+            position: relative;
             width: 400px;
+            height: 450px;
             border-radius: 10px;
             
-            height: 500px;
-            overflow: auto;
+            overflow-x: hidden;
+            overflow-y: auto;
+            
+            padding: 0 40px;
+            box-sizing: border-box;
         }
-        .center h1 {
-            text-align: center;
-            padding: 20px 0 20px 0;
-            border-bottom: 1px solid silver;
-            font-size: 22px;
-        }
-        .center p {
+        #form_wrap p {
             font-size: 13px;
             line-height: 1;
             margin: -10px 0 0 5px;
             color: #f44336;
         }
-        .center form {
-            padding: 0 40px;
-            box-sizing: border-box;
-        }
-        
-        .center .chk {
+        #form_wrap .chk {
             /*float: left;*/
         }
-        .center .dchk {
+        #form_wrap .dchk {
             float: left;
             width: 20%;
         }
         
-        .center .field {
+        #form_wrap .field {
             position: relative;
             border-bottom: 2px solid #adadad;
             margin: 20px 0;
             font-size: 16px;
         }
-        .center .field input {
-            width: 100%;
-            padding: 0 5px;
+        #form_wrap .field input {
+            width: 94%;
+            padding: 0px 10px;
             height: 40px;
             border: none;
             background: none;
             outline: none;
         }
-        .center .field label {
+        #form_wrap .field label {
             position: absolute;
             top: 50%;
-            left: 5px;
+            left: 10px;
             color: #adadad;
             transform: translateY(-50%);
             pointer-events: none;
             transition: .5s;
         }
-        .center .field span::before {
+        #form_wrap .field span::before {
             content: '';
             position: absolute;
             top: 40px; left: 0;
@@ -96,14 +91,14 @@
             background: #ffc320;
             transition: .3s;
         }
-        .center .field input:focus ~ label,
-        .center .field input:valid ~ label {
+        #form_wrap .field input:focus ~ label,
+        #form_wrap .field input:valid ~ label {
             /*top: -2px;*/
             opacity: 0;
             color: #ffc320;
         }
-        .center .field input:focus ~ span::before,
-        .center .field input:valid ~ span::before {
+        #form_wrap .field input:focus ~ span::before,
+        #form_wrap .field input:valid ~ span::before {
             width: 100%;
         }
         
@@ -113,77 +108,264 @@
             font-size: 18px; font-weight: 400;
             color: #fff; cursor: pointer;
             border: 1px solid; outline: none;
-            margin: 0 0 20px 0;
+            margin: 20px 0 20px 0;
         }
         input[type="submit"]:hover {
             border-color: #ffc320;
             transition: .3s;
         }
+        
+        /* 이미지 업로드 */
+        .wr {
+            margin: 0px 0 15px 0;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            height: 155px;
+        }
+        .wr .wrapper {
+            position: relative;
+            height: 155px; width: 100%;
+            border: 2px dashed #c2cdda;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .wrapper.active {
+            border: none; 
+        }
+        .wrapper.active img {
+            background: white;
+        }
+        .wr .wrapper .img {
+            position: absolute;
+            height: 100%; width: 100%;
+            display: flex;
+            align-items: center; justify-content: center;
+        }
+        .wr .wrapper .img img {
+            height: 100%; width: 100%;
+            object-fit: contain;
+        }
+        
+        .wr .content .icon {
+            font-size: 80px;
+            color: #ffd563;
+        }
+        .wr .content .text {
+            font-size: 18px;
+            font-weight: 500;
+            color: gray;
+        }
+        .wr .wrapper #cancel-btn {
+            position: absolute;
+            top: 15px; right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+        }
+        .wrapper.active:hover #cancel-btn{
+            display: block;
+        }
+        .wrapper #cancel-btn:hover {
+            color: #e74c3c;
+        }
+        
+        .wr .wrapper .file-name {
+            position: absolute;
+            bottom: 0; width: 100%;
+            color: #fff;
+            padding: 8px 0;
+            background: orange;
+            font-size: 18px;
+            display: none;
+        }
+        .wrapper.active:hover .file-name {
+            display: block;
+        }
+        
+        .wr #custom-btn {
+            margin-top: 10px;
+            width: 100%; height: 35px;
+            display: block;
+            border-radius: 25px;
+            font-size: 16px; font-weight: 500;
+            cursor: pointer;
+            color: white;
+            background: gray;
+        }
+        
+        #center .btn {
+            width: 400px;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
     <header id="header"></header>
+    
     <section id="center">
-        <div class="center">
-            <h1>회원가입</h1>
+        <div class="txt">
+            <h1 class="h1">회원가입</h1>
+        </div>
+        
+        
+        <div id="form_wrap">
             <form action="post">
                 <div class="field">
                     <input type="text" required>
                     <span></span>
                     <label for="">아이디</label>
                 </div>
-                <p>중복된 아이디</p>
+                <!--<p>중복된 아이디</p>-->
                 <!-- //아이디 -->
-                
-                <div class="field">
+
+                <div class="field" style="margin: 20px 0 0 0;">
                     <input type="password" required>
                     <span></span>
                     <label for="">비밀번호</label>
                 </div>
-                <!-- //비밀번호 -->
-                
-                <div class="field">
+
+                <div class="field" style="margin: 0 0 20px 0;">
                     <input type="password" required>
                     <span></span>
                     <label for="">비밀번호 확인</label>
                 </div>
-                <p>비밀번호 불일치</p>
-                <!-- //비밀번호 확인 -->
-                
+                <!--<p>비밀번호 불일치</p>-->
+                <!-- //비밀번호 -->
+
                 <div class="field">
                     <input type="text" required>
                     <span></span>
                     <label for="">닉네임</label>
                 </div>
-                <p>중복된 닉네임</p>
+                <!--<p>중복된 닉네임</p>-->
                 <!-- //닉네임 -->
-                
+
                 <div class="field chk" style="width: 80%;">
                     <input type="text" required>
                     <span></span>
                     <label for="">이메일</label>
                 </div>
+                <!--<p>이메일 형식에 맞지 않습니다.</p>-->
                 <!--<button class="dchk">인증번호 전송</button>-->
-                
+
                 <div class="field">
                     <input type="text" required>
                     <span></span>
                     <label for="">인증번호</label>
                     <!--<button class="dchk">인증</button>-->
                 </div>
+                <!--<p>인증번호 불일치</p>-->
                 <!-- //이메일 -->
-                
-                <!--<div class="field">
-                    <input type="text" required>
-                    <span></span>
-                    <label for="">이미지</label>
-                </div>-->
-                
-                
+
+                <div class="wr">
+                    <div class="wrapper" required> <!-- 드래그 영역 -->
+                        <div class="img">
+                            <img alt="">
+                        </div>
+                        <div class="content">
+                            <div class="icon">
+                                <i class="xi-cloud-upload-o"></i>
+                            </div>
+                            <div class="text">
+                                선택된 파일 없음
+                            </div>
+                        </div>
+                        <div id="cancel-btn">
+                            <i class="xi-close-thin"></i>
+                        </div>
+                        <div class="file-name">
+                        파일명
+                        </div>
+                    </div>
+                    <input id="default-btn" type="file" hidden>
+                    
+                    <button type="button" onclick="defaultBtnActive()" id="custom-btn">파일 선택</button>
+                </div>
+
+                <script>
+                    const defaultBtn = document.querySelector("#default-btn");
+                    const customBtn = document.querySelector("#custom-btn");
+                    const cancelBtn = document.querySelector("#cancel-btn");
+                    
+                    const wrapper = document.querySelector(".wrapper");
+                    const fileName = document.querySelector(".file-name");
+                    const img = document.querySelector("img");
+                    
+                    let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+                    let validExtensions = ["image/jpeg", "image/jpg", "image/png"];
+                    
+                    /* image upload */
+                    function defaultBtnActive(){
+                        defaultBtn.click();   
+                    }
+                    defaultBtn.addEventListener("change", function(){
+                        const file = this.files[0];
+                        
+                        if(file){
+                            const reader = new FileReader();
+                            reader.onload = function(){
+                                const result = reader.result;
+                                img.src = result;
+                                wrapper.classList.add("active");
+                            }
+                            cancelBtn.addEventListener("click", function(){
+                                img.src = "";
+                                wrapper.classList.remove("active");
+                            });
+                            reader.readAsDataURL(file);
+                        }
+                        if(this.value){
+                            let valueStore = this.value.match(regExp);
+                            fileName.textContent = valueStore;
+                        }
+                    });
+                    /* //image upload */
+                    
+                    /* Drag and Drop */
+                    /*let file;*/                    wrapper.addEventListener("dragover", function(event){
+                        event.preventDefault();
+                        wrapper.classList.add("active");
+                    });
+                    
+                    wrapper.addEventListener("dragleave", function(){
+                        wrapper.classList.remove("active");
+                    });
+                    
+                    wrapper.addEventListener("drop", function(event){
+                        event.preventDefault();
+                        const file = event.dataTransfer.files[0];
+                        let fileType = file.type;
+                        console.log(fileType); /* check */
+                        
+                        if(validExtensions.includes(fileType)){
+                            alert("this is an Image File");
+                            const ddreader = new FileReader();
+                            ddreader.onload = function(){
+                                let fileURL = ddreader.result; // passing user file source in fileURL variable
+                                let imgTag = `<img src="${fileURL}" alt="">`;
+                                img.innerHTML = imgTag; // adding that created img tag inside dropArea container
+                            }
+                            cancelBtn.addEventListener("click", function(){
+                                img.src = "";
+                                wrapper.classList.remove("active");
+                            });
+                        } else {
+                            alert("this is not an Image File");
+                            wrapper.classList.remove("active");
+                        }
+                    });
+                    /* //Drag and Drop */
+                </script>
                 <!-- //이미지 -->
-                
-                <input type="submit" value="회원가입">
             </form>
+        </div>
+        
+        <div class="btn">
+            <input type="submit" value="회원가입">    
         </div>
     </section>
     <!-- //center -->
