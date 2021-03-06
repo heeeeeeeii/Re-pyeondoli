@@ -137,7 +137,7 @@
             border: none; 
         }
         .wrapper.active img {
-            background: white;
+            /*background: white;*/
         }
         .wr .wrapper .img {
             position: absolute;
@@ -264,7 +264,7 @@
                 <div class="wr">
                     <div class="wrapper" required> <!-- 드래그 영역 -->
                         <div class="img">
-                            <img alt="">
+                            <img src="" alt="">
                         </div>
                         <div class="content">
                             <div class="icon">
@@ -292,11 +292,12 @@
                     const cancelBtn = document.querySelector("#cancel-btn");
                     
                     const wrapper = document.querySelector(".wrapper");
+                    const text = document.querySelector(".text");
                     const fileName = document.querySelector(".file-name");
                     const img = document.querySelector("img");
                     
-                    let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
                     let validExtensions = ["image/jpeg", "image/jpg", "image/png"];
+                    let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
                     
                     /* image upload */
                     function defaultBtnActive(){
@@ -326,35 +327,45 @@
                     /* //image upload */
                     
                     /* Drag and Drop */
-                    /*let file;*/                    wrapper.addEventListener("dragover", function(event){
+                    wrapper.addEventListener("dragover", (event)=>{
                         event.preventDefault();
                         wrapper.classList.add("active");
+                        text.textContent = "여기에 파일 놓기";
                     });
                     
-                    wrapper.addEventListener("dragleave", function(){
+                    wrapper.addEventListener("dragleave", ()=>{
                         wrapper.classList.remove("active");
+                        text.textContent = "선택된 파일 없음";
                     });
                     
-                    wrapper.addEventListener("drop", function(event){
+                    wrapper.addEventListener("drop", (event)=>{
                         event.preventDefault();
-                        const file = event.dataTransfer.files[0];
+                        let file = event.dataTransfer.files[0];
                         let fileType = file.type;
-                        console.log(fileType); /* check */
                         
                         if(validExtensions.includes(fileType)){
-                            alert("this is an Image File");
-                            const ddreader = new FileReader();
-                            ddreader.onload = function(){
-                                let fileURL = ddreader.result; // passing user file source in fileURL variable
-                                let imgTag = `<img src="${fileURL}" alt="">`;
-                                img.innerHTML = imgTag; // adding that created img tag inside dropArea container
+                            wrapper.classList.add("active");
+                            
+                            const fileReader = new FileReader();
+                            fileReader.onload = ()=>{
+                                let fileURL = fileReader.result; // passing user file source in fileURL variable
+                                img.src = `${fileURL}`;
+                                img.style.background = "white"; /* png 처리 */
                             }
+                            fileReader.readAsDataURL(file);
+                            
+                            if(this.value){
+                                let valueStore = this.value.match(regExp);
+                                fileName.textContent = valueStore;
+                            }
+                            
                             cancelBtn.addEventListener("click", function(){
+                                img.style.background = "none";
                                 img.src = "";
                                 wrapper.classList.remove("active");
                             });
                         } else {
-                            alert("this is not an Image File");
+                            alert("이미지 파일 형식이 아닙니다.");
                             wrapper.classList.remove("active");
                         }
                     });

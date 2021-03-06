@@ -1,56 +1,79 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
     <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
-    
+
     <title>이용약관</title>
-    
+
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/media.css">
     <link rel="stylesheet" href="css/layout.css">
-    
+
     <script src="js/jquery.min_1.12.4.js"></script>
-    
+
     <script>
-    $(function(){
-        /* include */
-        $("#header").load("header.html")
-        $("#footer").load("footer.html")
-    });
+        $(function() {
+            /* include */
+            $("#header").load("header.html")
+            $("#footer").load("footer.html")
+            
+            /* 전체선택 */
+            $(".chk_group").on("click", "#chk_all", function(){
+                $(this).parents(".chk_group").find('input').prop("checked",
+                    $(this).is(":checked"));
+            });
+
+            /* 개별선택 */
+            $(".chk_group").on("click", ".normal", function(){
+                let ischecked = true;
+
+                $(".chk_group .normal").each(function(){
+                    ischecked = ischecked && $(this).is(":checked");
+                });
+
+                $("#chk_all").prop("checked", ischecked);
+            });
+        });
     </script>
-    
+
     <style>
         .center {
             background: white;
             margin: 0 auto;
-            
+
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%); /* 가운데 배치 */
-            
+            transform: translate(-50%, -50%);
+            /* 가운데 배치 */
+
             width: 400px;
             border-radius: 10px;
         }
+
         .center h1 {
             text-align: center;
             padding: 20px 0 20px 0;
             border-bottom: 1px solid silver;
             font-size: 22px;
         }
+
         .center form {
             padding: 0 40px;
             box-sizing: border-box;
         }
+
         .center .field {
             position: relative;
             border-bottom: 2px solid #adadad;
             margin: 30px 0;
             font-size: 16px;
         }
+
         .center .field input {
             width: 100%;
             padding: 0 5px;
@@ -59,6 +82,7 @@
             background: none;
             outline: none;
         }
+
         .center .field label {
             position: absolute;
             top: 50%;
@@ -68,82 +92,187 @@
             pointer-events: none;
             transition: .5s;
         }
+
         .center .field span::before {
             content: '';
             position: absolute;
-            top: 40px; left: 0;
+            top: 40px;
+            left: 0;
             width: 0%;
             /* :focus width: 100%;*/
             height: 2px;
             background: #ffc320;
             transition: .3s;
         }
-        .center .field input:focus ~ label,
-        .center .field input:valid ~ label {
+
+        .center .field input:focus~label,
+        .center .field input:valid~label {
             top: -5px;
             color: #ffc320;
         }
-        .center .field input:focus ~ span::before,
-        .center .field input:valid ~ span::before {
+
+        .center .field input:focus~span::before,
+        .center .field input:valid~span::before {
             width: 100%;
         }
-        
+
         .center .find {
             margin: -5px 0 20px 5px;
             text-align: center;
             color: #a6a6a6;
             cursor: pointer;
         }
+
         .center .find:hover {
             color: #ffc320;
             text-decoration: underline;
         }
-        
+
         .next {
-            width: 100%; height: 50px;
-            background: #ffd563; border-radius: 25px;
-            font-size: 18px; font-weight: 400;
-            color: #fff; cursor: pointer;
-            border: 1px solid; outline: none;
+            width: 100%;
+            height: 50px;
+            background: #ffd563;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: 400;
+            color: #fff;
+            cursor: pointer;
+            border: 1px solid;
+            outline: none;
             margin: 0 0 20px 0;
             text-align: center;
             line-height: 50px;
         }
+
         .next:hover {
             border-color: #ffc320;
             transition: .3s;
         }
+
+        .check-wrap {
+            position: relative;
+            margin: 15px 0 20px 0;
+        }
+        /*기본 체크박스 없애기*/
+        .check-wrap input[type="checkbox"] {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0
+        }
+
+        /*커서에 pointer 설정*/
+        .check-wrap input[type="checkbox"]+label {
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /*새로운 디자인의 체크박스 만들기*/
+        .check-wrap input[type="checkbox"]+label:before {
+            content: '';
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            line-height: 25px;
+            margin: -2px 8px 0 0;
+            text-align: center;
+            vertical-align: middle;
+            background: #f1f4ff;
+            border-radius: 3px;
+        }
+        .check-wrap input[type="checkbox"]+label:active:before,
+        .check-wrap input[type="checkbox"]:checked+label:active:before {
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .check-wrap input[type="checkbox"]:checked+label:before {
+            content: '\2713';
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            background: #ffd563;
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .h2 {
+            font-size: 18px;
+            margin: 20px 0 10px 0;
+        }
+        
+        .agree {
+            border: 1px solid silver;
+            width: 100%;
+            height: 100px;
+            overflow: auto;
+        }
+        .agree_content {padding: 15px; font-size: 14px;}
     </style>
 </head>
+
 <body>
     <header id="header"></header>
     <section id="center">
         <div class="center">
-            <h1>이용약관</h1>
-            <form action="post">
-                <div class="field">
-                    <input type="text">
-                    <span></span>
-                    <label for="">아이디</label>
-                </div>
-                <!-- //아이디 -->
-                
-                <div class="field">
-                    <input type="password" required>
-                    <span></span>
-                    <label for="">비밀번호</label>
-                </div>
-                <!-- //비밀번호 -->
-                <a href="join.html">
-                    <div class="next">
-                        다음 단계로
+            <div class="chk_group">
+                <h1>이용약관</h1>
+                <form action="post">
+                    <div class="check-wrap sf">
+                        <input type="checkbox" id="chk_all">
+                        <label for="chk_all">전체 동의</label>
+
+
+                        <h2 class="h2">홈페이지 이용약관</h2>
+                        <div class="agree">
+                            <div class="agree_content sf">
+                            테스트테스트테스트테스트테스트테스트<br>
+                            테스트테스트테스트테스트테스트테스트<br>
+                            테스트테스트테스트<br>
+                            테스트테스트테스트<br>
+                            테스트테스트테스트테스트테스트테스트<br>
+                            테스트테스트테스트테스트테스트테스트<br>
+                            </div>
+                        </div>
+                        <div class="check-wrap sf">
+                            <input type="checkbox" id="chk_1" class="normal">
+                            <label for="chk_1">홈페이지 이용약관에 동의합니다.</label>
+                        </div>
+
+                        <h2 class="h2">홈페이지 이용약관</h2>
+                        <div class="agree">
+                            <div class="agree_content sf">
+                            테스트테스트테스트테스트테스트테스트<br>
+                            테스트테스트테스트테스트테스트테스트<br>
+                            테스트테스트테스트<br>
+                            테스트테스트테스트<br>
+                            테스트테스트테스트테스트테스트테스트<br>
+                            테스트테스트테스트테스트테스트테스트<br>
+                            </div>
+                        </div>
+                        <div class="check-wrap sf">
+                            <input type="checkbox" id="chk_2" class="normal">
+                            <label for="chk_2">홈페이지 이용약관에 동의합니다.</label>
+                        </div>
+
+                        <a href="join.html">
+                            <div class="next">
+                                다음 단계로
+                            </div>
+                        </a>
                     </div>
-                </a>
-                <!--<input type="submit" value="다음 단계로">-->
-            </form>
+                </form>
+            </div>
         </div>
     </section>
     <!-- //center -->
     <footer id="footer"></footer>
 </body>
+
 </html>

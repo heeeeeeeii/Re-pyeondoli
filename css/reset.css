@@ -43,6 +43,9 @@
         color: #222; font-size: 13px; line-height: 1.5;
     }
 
+    /* 얇은 폰트 */
+    .sf {font-weight: 300;}
+
     /* 폰트 스타일 초기화 */
     em, address {font-style: normal;}
 
