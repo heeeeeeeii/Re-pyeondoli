@@ -21,4 +21,6 @@
 - [x] 이용약관 전체동의
 - [x] 이용약관 선택동의
 - [x] 아이디 비밀번호 찾기 화면
+- [ ] 로딩효과
+
 https://soheeoott.github.io/pyeondoli/index.html
