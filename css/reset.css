@@ -1,31 +1,12 @@
     /* 폰트설정 */
     @font-face {
-        font-family: 'NanumBarunGothic';
+        font-family: 'ELAND_Choice_B';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/ELAND_Choice_B.woff') format('woff');
+        font-weight: normal;
         font-style: normal;
-        font-weight: 400;
-        src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
-        src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
     }
-
-    @font-face {
-        font-family: 'NanumBarunGothic';
-        font-style: normal;
-        font-weight: 700;
-        src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
-        src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
-    }
-
-    @font-face {
-        font-family: 'NanumBarunGothic';
-        font-style: normal;
-        font-weight: 300;
-        src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
-        src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
-    }
-
-    * {
-        font-family: 'NanumBarunGothic', sans-serif;
-        -webkit-font-smoothing: antialiased;
+    * { 
+        font-family: 'ELAND_Choice_B', sans-serif;
     }
     /* //폰트설정 */
 
@@ -35,16 +16,13 @@
 
     /* a 링크 초기화 */
     a {color: #222; text-decoration: none;}
-    a:hover {color: #2698cb;}
+    a:hover {color: #fdcb6e; transition: all 0.3s ease;}
 
     /* 폰트 초기화 */
     input, textarea, select, button, table {
-        font-family: 'NanumBarunGothic', AppleSDGothicNeo-Regular,'Malgun Gothic','맑은 고딕',dotum,'돋움', sans-serif; 
+        font-family: 'ELAND_Choice_B', AppleSDGothicNeo-Regular,'Malgun Gothic','맑은 고딕',dotum,'돋움', sans-serif; 
         color: #222; font-size: 13px; line-height: 1.5;
     }
-
-    /* 얇은 폰트 */
-    .sf {font-weight: 300;}
 
     /* 폰트 스타일 초기화 */
     em, address {font-style: normal;}

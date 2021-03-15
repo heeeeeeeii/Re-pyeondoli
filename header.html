@@ -4,55 +4,60 @@
     <meta charset="UTF-8">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="js/default.js"></script>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <title>header</title>
 </head>
 <body>
     <header id="header">
         <div class="loader"></div>
-       
         <div class="clearfix header">
-            <h1 class="logo"><a href="index.html"><img src="img/logo.png" alt="편돌이 로고 이미지"><span class="ir_su">편돌이 로고</span></a></h1>
-            <nav> <!--class="clearfix"-->    
-                <ul class="menu">
+            <h1 class="logo"><a href="index.html">편돌이</a></h1>
+
+            <input type="checkbox" id="show-menu" class="burger-menu" style="opacity: 0;">
+            <label for="show-menu" class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <div class="menu">
+                <ul class="menu-list">
                     <li><a href="#">상품목록</a></li>
                     <li><a href="#">후기</a></li>
                     <li><a href="#">공유</a></li>
                     <li><a href="#">공지사항</a></li>
                     <li><a href="#">Q&amp;A</a></li>
                 </ul>
+            </div>
+            
+            <div class="icon">    
                 
-                <ul class="icon">
-                    <li><a href="#"><i class="xi-search"></i><span class="ir_su">검색</span></a></li>
-                    <li><a href="#"><i class="xi-basket"></i><span class="ir_su">장바구니</span></a></li> 
-                    <li><a href="#"><i class="xi-user"></i><span class="ir_su">로그인</span></a></li>
+                <!-- <a href="" class="search-toggle"></a> -->
+                <a href="basket.html" class="search-toggle"><i class="xi-search"></i><span class="ir_su">검색</span></a>
+                
+                <div id="nav-search">
+                    <form action="#" class="search-form" role="search" style="">
+                        <input autocomplete="off" class="search-input" name="q" placeholder="Search" type="search" value="" style="">
+                        <input class="search-action" type="submit" value="Ok" style="">
+                    </form>
+                </div>
+
+                <ul class="icon-list">
+                    <li><a href="basket.html"><i class="xi-search"></i><span class="ir_su">검색</span></a></li>
+                    <li><a href="basket.html"><i class="xi-basket"></i><span class="ir_su">장바구니</span></a></li>
                 </ul>
-                
-                <ul class="info">
-                    <li><a href="login.html">로그인</a></li> 
+            </div>
+
+            <div class="info">
+                <ul class="info-list">
+                    <li><a href="login.html">로그인</a></li>
                     <li><a href="tos.html">회원가입</a></li>
                 </ul>
-                
-                <ul class="toggle">
-                    <li>
-                        <i class="xi-bars"></i>
-                        <!--<input type="checkbox" id="menuicon">
-                        <label for="menuicon">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </label>  // input + label 연결 -->
-                    </li>
-                </ul>
-            </nav>
+            </div>
         </div>
         <!-- //nav -->      
     </header>
     <!-- //header -->
-    
-    <script>
-        $(window).load(function(){
-            $('.loader').delay('3000').fadeOut();
-        });
-    </script>
 </body>
 </html>
