@@ -1,51 +1,48 @@
     /* 게시판 */
     .col_txt {
         font-size: 18px;
-        color: #2f7fa6;
+        color: #fdcb6e;
         padding-bottom: 5px;
         margin-bottom: 5px;
         border-bottom: 1px dashed #dbdbdb;
     }
-    .col_wrap {position: relative;}
+    .col_wrap {
+        position: relative;
+        background: #fdcb6e;
+        border-radius: 10px;
+        cursor: pointer;
+    }
     .col_wrap li {
         position: relative;
         overflow: hidden;
-        text-overflow: ellipsis;
         white-space: nowrap;
-        padding-left: 8px;
+        padding: 9px 0 9px 9px;
+        color: #ffffffe6;
     }
-    .col_wrap li:before {
-        content: '';
-        width: 3px;
-        height: 3px;
-        border-radius: 50%;
-        background: #449ce2;
-        position: absolute;
-        left: 0;
-        top: 6px;
-    }
-    .col_wrap table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-    .col_wrap thead, th, td {
-        padding: 8px;
-        word-break: keep-all;
-    }
-    .col_wrap th {
-        font-weight: normal;
-        background: lightgray;
-        color: gray;
-    }
-    .col_wrap td {
-        text-align: center;
-        width: 90%;
-    }
-    .col_wrap span {
-        white-space: nowrap;
-        overflow: hidden;
+    .col_wrap .f_li {
+        /* width: 84%; */
+        width: 75%;
+        float: left;
         text-overflow: ellipsis;
     }
-    .col_wrap tr:hover {
-        background: aliceblue;
+    .col_wrap .s_li {
+        width: 16%;
+        text-align: right;
+    }
+    .col_wrap .title {
+        border-bottom: 1px dashed white;
+    }
+    .col_wrap .title:hover {
+        background: none;
+        border-radius: 0;
+    }
+    .col_wrap ul:hover {
+        background: #e9e9e96e;
+        border-radius: 10px;
+    }
+
+    @media (max-width: 560px){
+        .col_wrap .s_li {
+            opacity: 0;
+        }
     }

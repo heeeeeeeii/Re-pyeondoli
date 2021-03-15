@@ -26,16 +26,6 @@
             display: block;
             position: absolute; right: 320px;
         }
-        /*header .menu {display: none !important;}*/
-        header nav {float: none; background: #fff;} /*padding: 0 15px;*/
-        header nav ul {float: none;}
-        header .logo {float: none;}
-        
-        .menu {display: none;}
-        .menu li {float: none;}
-        
-        /*.icon {position: absolute; top: 13px; right: 30px;}
-        .info {position: absolute; top: 13px; right: 150px;}*/
     }
 
     /* 화면 너비 0 ~ 768px */
