@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+
+	<title>회원정보</title>
+
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/media.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<link rel="stylesheet" href="css/info.css">
+	<link rel="stylesheet" href="css/main.css">
+
+	<script src="js/jquery.min_1.12.4.js"></script>
+	<script src="https://kit.fontawesome.com/c5f1d0be2f.js" crossorigin="anonymous"></script>
+
+	<script>
+		$(function () {
+			/* include */
+			$("#header").load("header.html")
+			$("#footer").load("footer.html")
+		});
+	</script>
+
+	<style>
+		.user-wrap {
+			text-align: center;
+			padding: 5px;
+			background: #fdcb6e;
+			border-radius: 10px;
+		}
+		.user-wrap .out {
+			margin: 10px;
+		}
+		.user-wrap .user-name {
+			color: white;
+    		margin: 5px;
+		}
+		.user-wrap .out button {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			padding: 0.5rem 1rem;
+			border: none;
+			border-radius: 4px;
+			display: inline-block;
+			width: auto;
+			box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+			cursor: pointer;
+			transition: 0.5s;
+
+			background: aliceblue;
+			color: gray;
+			font-size: 14px;
+		}
+		.user-wrap .out button:hover {
+			background: #fdcb6e;
+			color: aliceblue;
+		}
+
+		.benefit {
+			display: flex;
+			padding: 10px;
+			margin-top: 15px;
+			text-align: center;
+			font-size: 15px;
+			border-top: 2px dashed lightgray;
+			border-bottom : 2px dashed lightgray;
+		}
+		.benefit div {
+			margin: 0 0.4em 0 0;
+		}
+		.benefit i {
+			font-size: 50px;
+			margin: 10px;
+			color: #fdcb6e;
+			cursor: pointer;
+		}
+		.benefit-img:hover {
+			transition: 0.3s ease;
+			color: aliceblue;
+		}
+		.benefit-txt {
+			height: 35px;
+			padding-top: 10px;
+		}
+		/* hover */
+
+		/* 리뷰 */
+		.b_li {
+			width: 51%;
+			float: left;
+			text-overflow: ellipsis;
+		}
+		.m_li {
+			width: 16%;
+			text-align: right;
+			float: left;
+		}
+		.l_li {
+			width: 19%;
+			text-align: right;
+		}
+		.txtlh {
+			line-height: 35px;
+		}
+		.review_title {
+			padding: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<header id="header"></header>
+	<section id="center">
+		<form action="post" class="form">
+			<div class="bTitle">
+                <p>회원정보</p>
+            </div>
+
+			<div class="user-wrap">
+				<div class="user-name">
+					~~ 님 환영합니다.
+				</div>
+				<div class="out">
+					<button class="logout" onclick="#">로그아웃</button>
+					<button class="infoupdate" onclick="#">회원정보 수정</button>
+				</div>
+			</div>
+
+			<div class="benefit">
+				<!-- 포인트 -->
+				<div class="point">
+					<div class="benefit-txt">
+						<p>보유<br>포인트</p>
+					</div>
+
+					<div class="benefit-img">
+						<i class="fas fa-dollar-sign"></i>
+						<!-- 123132 원 -->
+					</div>
+				</div>
+
+				<!-- 장바구니 -->
+				<div class="cart">
+					<div class="benefit-txt txtlh">
+						<p>장바구니</p>
+					</div>
+
+					<div class="benefit-img">
+						<i class="xi-basket"></i>
+					</div>
+				</div>
+
+				<!-- 예약 -->
+				<div class="rslist">
+					<div class="benefit-txt txtlh">
+						<p>예약내역</p>
+					</div>
+
+					<div class="benefit-img">
+						<i class="fas fa-receipt"></i>
+					</div>
+				</div>
+
+				<!-- 출석체크 -->
+				<div class="atcheck">
+					<div class="benefit-txt txtlh">
+						<p>출석체크</p>
+					</div>
+
+					<div class="benefit-img">
+						<i class="far fa-calendar-check"></i>
+					</div>
+				</div>
+			</div>
+
+			<!-- 리뷰 -->
+			<div class="review_title">
+				작성한 리뷰
+			</div>
+
+			<div class="col_wrap">
+				<ul class="title">
+					<li class="b_li">제목</li>
+					<li class="m_li">조회수</li>
+					<li class="l_li">날짜</li>
+				</ul>
+				<ul>
+					<li class="b_li">블라블라블라블라블라블라블라블라블라블라블라블라</li>
+					<li class="m_li">2</li>
+					<li class="l_li">210315</li>
+				</ul>
+				
+				<ul>
+					<li class="b_li">블라블라블라블라블라블라블라블라블라블라블라블라</li>
+					<li class="m_li">1</li>
+					<li class="l_li">210315</li>
+				</ul>
+
+				<ul>
+					<li class="b_li">블라블라블라블라블라블라블라블라블라블라블라블라</li>
+					<li class="m_li">2</li>
+					<li class="l_li">210315</li>
+				</ul>
+			</div>
+			
+
+			<!-- <div class="review"> 
+				<p class="reviewtxt">작성한 리뷰</p>
+
+				<div class="reivewlist">
+					<table id="reviewtable" class="reviewtable">
+						<colgroup>
+							<col width="210">
+							<col width="100">
+							<col width="100">
+						</colgroup>
+
+						<thead>
+							<tr>
+								<th>제목</th>
+								<th>날짜</th>
+								<th>조회수</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td colspan="3" class="reviewcontent">아직 작성한 리뷰가 없습니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div> -->
+
+			<!-- <div class="container">
+				<table class="table">
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">bList.IDX</th>
+							<td>bList.TITLE</td>
+							<td>bList.CREA_ID</td>
+							<td>bList.CREA_DATE</td>
+							<td>bList.HIT_CNT</td>
+						</tr>
+
+						<tr>
+							<td colspan="5">조회된 결과가 없습니다.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			-->
+			
+		</form>
+	</section>
+	<footer id="footer"></footer>
+</body>
+
+</html>

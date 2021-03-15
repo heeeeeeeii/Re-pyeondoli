@@ -1,0 +1,356 @@
+/* common */
+.bTitle {
+    font-size: 22px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.mTitle {
+    font-size: 18px;
+}
+
+.dTitle {
+    font-size: 18px;
+    border-bottom: 1px solid lightgray;
+    text-align: center;
+    margin: 15px 0;
+    padding: 8px;
+}
+
+.warning {
+    font-size: 13px;
+    line-height: 1;
+    color: #f44336;
+    position: relative;
+    left: 30px;
+    margin: -10px 0 10px 0;
+}
+
+#center .form {
+    width: 300px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#center .join-form {
+    width: 300px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    height: 375px;
+    overflow-y: auto;
+}
+
+.join-wrap {
+    width: 300px;
+    margin: 0 auto;
+    padding: 0 30px;
+    height: 533px;
+}
+
+.titleResize {
+    padding: 15px;
+}
+
+/* field */
+.field {
+    display: flex;
+    align-items: center;
+    background-color: #e9e9e96e;
+    padding: 15px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+}
+.db-field {
+    display: flex;
+}
+
+.field .field-icon {
+    color: #344667;
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+}
+.field .field-input {
+    border: 0;
+    padding: 0 0 0 15px;
+    background-color: transparent;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+}
+::-webkit-input-placeholder {
+    color: #80808080;
+}
+::-moz-placeholder {
+    color: #80808080;
+}
+
+.email-chk {
+    height: 54px;
+    border-radius: 16px;
+    width: 33%;
+    color: white;
+    cursor: pointer;
+    background-color: #fdcb6e;
+    border: 1px solid;
+    font-size: 14px;
+}
+.email-chk:hover {
+    border-color: #fdcb6e;
+    transition: .3s;
+}
+
+.join-submit {
+    margin: 15px 0;
+}
+.field-submit {
+    color: white;
+    border-radius: 10px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #fdcb6e;
+    font-size: 18px;
+    cursor: pointer;
+    border: 1px solid;
+}
+.field-submit:hover {
+    border-color: #fdcb6e;
+    transition: .3s;
+}
+
+/* find */
+.find {
+    display: flex;
+    justify-content: space-between;
+}
+.find .login-find {
+    padding-bottom: 15px;
+    color:#b2bec3;
+    font-size: 15px;
+}
+.find .login-find:hover {
+    color: #fdcb6e;
+}
+
+/* social */
+.social .socialCommon {
+    float: left;
+    width: 32%;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    line-height: 55px;
+    margin-right: 1%;
+    box-sizing: border-box;
+    border: 1px solid;
+    height: 45px;
+    font-size: 30px;
+}
+.social .naver {
+    background: #19ce60;
+}
+.social .naver:hover {
+    border-color: #19ce60;
+    transition: .3s;
+}
+.social .kakao {
+    background: #fcce00;
+}
+.social .kakao:hover {
+    border-color: #fcce00;
+    transition: .3s;
+}
+.social .google {
+    background: #da4824;
+}
+.social .google:hover {
+    border-color: #da4824;
+    transition: .3s;
+}
+
+/* 이미지 업로드 */
+.imgUpload-wrap {
+    margin: 0px 0 15px 0;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    height: 155px;
+}
+
+.imgUpload-wrap .imgUpload-container {
+    position: relative;
+    height: 155px;
+    width: 100%;
+    border: 2px dashed #c2cdda;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.imgUpload-container.active {
+    border: none;
+}
+
+.imgUpload-container .img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgUpload-container .img img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.imgUpload-wrap .content .icon {
+    font-size: 80px;
+    color: #ffd563;
+}
+
+.imgUpload-wrap .content .txt {
+    font-size: 18px;
+    font-weight: 500;
+    color: gray;
+}
+
+.imgUpload-wrap .imgUpload-container #cancel-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.imgUpload-container.active:hover #cancel-btn {
+    display: block;
+}
+
+.imgUpload-container #cancel-btn:hover {
+    color: #e74c3c;
+}
+
+.imgUpload-container .file-name {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    padding: 8px 0;
+    background: orange;
+    font-size: 18px;
+    display: none;
+}
+
+.imgUpload-container.active:hover .file-name {
+    display: block;
+}
+
+.imgUpload-wrap #custom-btn {
+    width: 100%;
+    height: 35px;
+    display: block;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #80808080;
+    background-color: #e9e9e96e;
+    margin: 10px 0;
+}
+
+/* 이용약관 */
+.check-wrap {
+    position: relative;
+    margin: 0 0 20px 0;
+    font-size: 15px;
+}
+
+.agree-wrap {
+    background-color: #e9e9e96e;
+    border: 1px solid #e9e9e96e;
+    width: 100%;
+    height: 70px;
+    overflow: auto;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+.agree_content {
+    padding: 15px;
+    font-size: 14px;
+}
+
+.label-chkAll {
+    margin: 0 0 15px 0;
+}
+.label-chkNormal {
+    margin: 5px 0 0 0;
+}
+
+/*기본 체크박스 없애기*/
+.check-wrap input[type="checkbox"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/*커서에 pointer 설정*/
+.check-wrap input[type="checkbox"]+label {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: gray;
+}
+
+/*새로운 디자인의 체크박스 만들기*/
+.check-wrap input[type="checkbox"]+label:before {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    margin: -2px 8px 0 0;
+    text-align: center;
+    vertical-align: middle;
+    background: #f1f4ff;
+    border-radius: 3px;
+}
+
+.check-wrap input[type="checkbox"]+label:active:before,
+.check-wrap input[type="checkbox"]:checked+label:active:before {
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.check-wrap input[type="checkbox"]:checked+label:before {
+    content: '\2713';
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    background: #ffd563;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+}
