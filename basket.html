@@ -1,55 +1,170 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
-    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+
+    <title>장바구니</title>
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/info.css">
+
+    <script src="js/jquery.min_1.12.4.js"></script>
+    <script src="https://kit.fontawesome.com/c5f1d0be2f.js" crossorigin="anonymous"></script>
+
+    <script>
+        $(function() {
+            /* include */
+            $("#header").load("header.html")
+            $("#footer").load("footer.html")
+        });
+    </script>
+
     <style>
-        #header {
-            position: fixed;
-            z-index: 999;
-            /*height: 10%;*/
-            height: 75.3px;
+        .cart-container {
+
+        }
+        .cart-wrap {
+            margin: 10px auto;
+        }
+        table {
             width: 100%;
-            background: white;
+            border-collapse: collapse;
         }
-
-        #cont_banner {
-            clear: both; float: left; width: 100%; 
-            /*height: 40%; */
-            height: 302px;
-            background: #bbdefb; overflow: hidden;
-            margin-top: 75.3px;
+        .cart-info {
+            display: flex;
+            flex-wrap: wrap;
         }
-        #cont_left {
-            float: left; width: 50%; 
-            /*height: 40%;*/
-            height: 302px;
-            overflow: hidden; 
-        }
-        #cont_right {
-            float: left; width: 50%; 
-            /*height: 40%; */
-            height: 302px;
-            background: #789bb9;
-            overflow: hidden;
-        }
-
-        #footer {
-            clear: both; 
-            /*height: 10%;*/
-            height: 75.3px;
-            background: #90caf9;
-        }
-        .footer {    
+        th {
             text-align: center;
-            line-height: 4.66;
+            padding: 5px;
+            color: #fff;
+            background: #ffbf48;
+            font-weight: normal;
+        }
+        td {
+            padding: 10px 5px;
+        }
+        td input {
+            width: 35px;
+            height: 30px;
+            padding: 5px;
+            outline: none;
+            border: none;
+        }
+        td a {
+            color: #ffbf48;
+            font-size: 12px;
+        }
+        td img {
+            width: 80px;
+            height: 80px;
+            margin-right: 10px;
+        }
+
+        .total-price {
+            display: flex;
+            justify-content: flex-end;
+        }
+        .total-price table {
+            border-top: 3px solid #ffbf48;
+            /* width: 10%;
+            max-width: 350px; */
+        }
+        td:last-child {
+            text-align: right;
         }
     </style>
-    
-    <title>장바구니</title>
 </head>
+
 <body>
-    
+    <header id="header"></header>
+    <section id="center">
+        <!-- <div class="center"> -->
+            
+        <div class="form">
+            <div class="bTitle">
+                <p>장바구니</p>
+            </div>
+            
+            <div class="cart-container cart-wrap"> <!-- small-container -->
+                <table>
+                    <tr>
+                        <th>상품</th>
+                        <th>수량</th>
+                        <th>금액</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="cart-info">
+                                <img src="img/gs25/1+1/GD_6294003599133_002.jpg" alt="">
+                                <div>
+                                    <p>킷캣</p>
+                                    <small>가격 : 1,000원</small>
+                                    <br />
+                                    <a href="">삭제</a>
+                                </div>
+                            </div>
+                        </td>
+                        <td><input type="number" value="1"></td>
+                        <td>6,000원</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="cart-info">
+                                <img src="img/gs25/1+1/GD_8809152414732_001.jpg" alt="">
+                                <div>
+                                    <p>킷캣</p>
+                                    <small>가격 : 1,000원</small>
+                                    <br />
+                                    <a href="">삭제</a>
+                                </div>
+                            </div>
+                        </td>
+                        <td><input type="number" value="1"></td>
+                        <td>6,000원</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="cart-info">
+                                <img src="img/gs25/1+1/GD_8809152414794_001.jpg" alt="">
+                                <div>
+                                    <p>킷캣</p>
+                                    <small>가격 : 1,000원</small>
+                                    <br />
+                                    <a href="">삭제</a>
+                                </div>
+                            </div>
+                        </td>
+                        <td><input type="number" value="1"></td>
+                        <td>6,000원</td>
+                    </tr>
+                </table>
+
+                <div class="total-price">
+                    <table>
+                        <tr>
+                            <td>합계</td>
+                            <td>10,000 원</td>
+                        </tr>
+                        <tr>
+                            <td>총 금액</td>
+                            <td>15,000 원</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!-- 장바구니 -->
+        </div>
+    </section>
+    <!-- //center -->
+    <footer id="footer"></footer>
 </body>
 </html>

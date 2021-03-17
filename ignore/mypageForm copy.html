@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+
+	<title>회원정보</title>
+
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/media.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<link rel="stylesheet" href="css/info.css">
+	<link rel="stylesheet" href="css/mypageForm.css">
+	<link rel="stylesheet" href="css/main.css">
+
+	<script src="js/jquery.min_1.12.4.js"></script>
+
+	<script>
+		$(function () {
+			/* include */
+			$("#header").load("header.html")
+			$("#footer").load("footer.html")
+		});
+	</script>
+
+	<style>
+		.user {
+			text-align: center;
+		}
+
+		:root {
+			--button-color: #ffffff;
+			--button-bg-color: #0d6efd;
+			--button-hover-bg-color: #025ce2;
+		}
+
+		.user .out {
+			margin: 20px;
+		}
+
+		.user .out button {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+
+			background: var(--button-bg-color);
+			color: var(--button-color);
+			margin: 0;
+			padding: 0.5rem 1rem;
+
+			font-family: 'Noto Sans KR', sans-serif;
+			font-weight: 400;
+			text-align: center;
+			text-decoration: none;
+
+			border: none;
+			border-radius: 4px;
+			display: inline-block;
+			width: auto;
+
+			box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+			cursor: pointer;
+			transition: 0.5s;
+		}
+
+		.user .out button:active,
+		.user .out button:hover,
+		.user .out button:focus {
+			background: var(--button-hover-bg-color);
+			outline: 0;
+		}
+
+		.user .out button:disabled {
+			opacity: 0.5;
+		}
+
+		.user .out button.logout {
+			--button-color: #212529;
+			--button-bg-color: #ffc107;
+			--button-hover-bg-color: aliceblue;
+		}
+
+		.user .out button.infoupdate {
+			--button-color: #212529;
+			--button-bg-color: #ffc107;
+			--button-hover-bg-color: aliceblue;
+		}
+
+		.benefit {
+			padding-left: 45px;
+		}
+
+		.benefit img {
+			width: 50px;
+    		height: 50px;
+			cursor: pointer;
+		}
+
+		.benefit div {
+			margin-right: 1.2em;
+		}
+
+		.benefit .point {
+			float: left;
+			text-align: center;
+		}
+
+		.benefit .cart {
+			float: left;
+			text-align: center;
+		}
+
+		.benefit .rslist {
+			float: left;
+			text-align: center;
+		}
+
+		.benefit .atcheck {
+			float: left;
+			text-align: center;
+		}
+
+		.review {
+			float: left;
+			padding-left: 45px;
+			padding-top: 25px;
+		}
+
+		.review .reivewlist .reviewtable thead {
+			background: #ffc107;
+		}
+
+		.reviewcontent {
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<header id="header"></header>
+	<section id="center">
+		<form action="post" class="form">
+			<div class="bTitle">
+                <p>회원정보</p>
+            </div>
+
+			<div class="user">
+				~~ 님 환영합니다.
+				<div class="out">
+					<button class="logout" onclick="#">로그아웃</button>
+					<button class="infoupdate" onclick="#">회원정보 수정</button>
+				</div>
+			</div>
+
+			<div class="benefit">
+				<!-- 포인트 -->
+				<div class="point">
+					<div class="pointtxt">
+						<p>보유 포인트</p>
+					</div>
+
+					<div class="pointimg">
+						<img src="img/point.png" alt="">
+					</div>
+				</div>
+
+				<!-- 장바구니 -->
+				<div class="cart">
+					<div class="carttxt">
+						<p>장바구니</p>
+					</div>
+
+					<div class="cartimg">
+						<img src="img/cart01.png" alt="">
+					</div>
+				</div>
+
+				<!-- 예약 -->
+				<div class="rslist">
+					<div class="rstxt">
+						<p>예약내역</p>
+					</div>
+
+					<div class="rsimg">
+						<img src="img/reservation01.png" alt="" onclick="#">
+					</div>
+				</div>
+
+				<!-- 출석체크 -->
+				<div class="atcheck">
+					<div class="atchecktxt">
+						<p>출석체크</p>
+					</div>
+
+					<div class="atcheckimg">
+						<img src="resources/img/attendanceCheck.png" alt="" onclick="#">
+					</div>
+				</div>
+			</div>
+
+			<!-- 리뷰 -->
+			<!-- style="overflow:auto; height:200px;" -->
+			<div class="review"> 
+				<p class="reviewtxt">작성한 리뷰</p>
+
+				<div class="reivewlist">
+					<table id="reviewtable" class="reviewtable">
+						<colgroup>
+							<col width="210">
+							<col width="100">
+							<col width="100">
+						</colgroup>
+
+						<thead>
+							<tr>
+								<th>제목</th>
+								<th>날짜</th>
+								<th>조회수</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td colspan="3" class="reviewcontent">아직 작성한 리뷰가 없습니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="container">
+				<table class="table">
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">bList.IDX</th>
+							<td>bList.TITLE</td>
+							<td>bList.CREA_ID</td>
+							<td>bList.CREA_DATE</td>
+							<td>bList.HIT_CNT</td>
+						</tr>
+
+						<tr>
+							<td colspan="5">조회된 결과가 없습니다.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</form>
+	</section>
+	<!-- //center -->
+	<footer id="footer"></footer>
+</body>
+
+</html>
