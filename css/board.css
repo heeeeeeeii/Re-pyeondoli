@@ -1,0 +1,58 @@
+.board {
+    width: 80%;
+}
+.basket-table {
+    height: 334px;
+    overflow-y: scroll;
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+.cart-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+th {
+    text-align: center;
+    padding: 5px;
+    color: #fff;
+    background: #ffbf48;
+    font-weight: normal;
+}
+td {
+    padding: 5px;
+    text-align: center;
+}
+td input {
+    width: 35px;
+    height: 30px;
+    padding: 5px;
+    outline: none;
+    border: none;
+}
+td a {
+    color: #ffbf48;
+    font-size: 12px;
+}
+.basket-warning {
+    font-size: 13px;
+    line-height: 1;
+    color: #f44336;
+}
+td img {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+}
+.td-left {
+    text-align: left;
+    padding: 0 0 0 25px;
+}
+.total-price {
+    display: flex;
+    justify-content: flex-end;
+    margin: 15px 0 -15px 0;
+}

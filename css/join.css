@@ -1,0 +1,11 @@
+.titleResize {
+    padding: 15px;
+}
+
+.db-field {
+    display: flex;
+}
+
+.join-submit {
+    margin: 15px 0;
+}

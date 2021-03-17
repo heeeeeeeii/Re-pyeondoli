@@ -1,0 +1,94 @@
+/* 이미지 업로드 */
+.imgUpload-wrap {
+    margin: 0px 0 15px 0;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    height: 155px;
+}
+
+.imgUpload-wrap .imgUpload-container {
+    position: relative;
+    height: 155px;
+    width: 100%;
+    border: 2px dashed #c2cdda;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.imgUpload-container.active {
+    border: none;
+}
+
+.imgUpload-container .img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgUpload-container .img img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.imgUpload-wrap .content .icon {
+    font-size: 80px;
+    color: #ffd563;
+}
+
+.imgUpload-wrap .content .txt {
+    font-size: 18px;
+    font-weight: 500;
+    color: gray;
+}
+
+.imgUpload-wrap .imgUpload-container #cancel-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.imgUpload-container.active:hover #cancel-btn {
+    display: block;
+}
+
+.imgUpload-container #cancel-btn:hover {
+    color: #e74c3c;
+}
+
+.imgUpload-container .file-name {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    padding: 8px 0;
+    background: orange;
+    font-size: 18px;
+    display: none;
+}
+
+.imgUpload-container.active:hover .file-name {
+    display: block;
+}
+
+.imgUpload-wrap #custom-btn {
+    width: 100%;
+    height: 35px;
+    display: block;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #80808080;
+    background-color: #e9e9e96e;
+    margin: 10px 0;
+}

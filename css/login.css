@@ -1,0 +1,58 @@
+/* 아이디 비밀번호 찾기 */
+.find {
+    display: flex;
+    justify-content: space-between;
+}
+
+.find .login-find {
+    padding-bottom: 15px;
+    color: #b2bec3;
+    font-size: 15px;
+}
+
+.find .login-find:hover {
+    color: #fdcb6e;
+}
+
+/* 간편 로그인 */
+.social .socialCommon {
+    float: left;
+    width: 32%;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    line-height: 55px;
+    margin-right: 1%;
+    box-sizing: border-box;
+    border: 1px solid;
+    height: 45px;
+    font-size: 30px;
+}
+
+.social .naver {
+    background: #19ce60;
+}
+
+.social .naver:hover {
+    border-color: #19ce60;
+    transition: .3s;
+}
+
+.social .kakao {
+    background: #fcce00;
+}
+
+.social .kakao:hover {
+    border-color: #fcce00;
+    transition: .3s;
+}
+
+.social .google {
+    background: #da4824;
+}
+
+.social .google:hover {
+    border-color: #da4824;
+    transition: .3s;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+
+    <title>상품후기</title>
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/info.css">
+
+    <script src="js/jquery.min_1.12.4.js"></script>
+    <script src="https://kit.fontawesome.com/c5f1d0be2f.js" crossorigin="anonymous"></script>
+
+    <script>
+        $(function() {
+            /* include */
+            $("#header").load("header.html")
+            $("#footer").load("footer.html")
+        });
+    </script>
+</head>
+
+<body>
+    <header id="header"></header>
+    <section id="center">
+        <!-- <div class="center"> -->
+            
+        <div class="form">
+            <div class="bTitle">
+                <p>장바구니</p>
+            </div>
+            
+            <div class="cart-container cart-wrap"> <!-- small-container -->
+                <table>
+                    <tr>
+                        <th>상품</th>
+                        <th>수량</th>
+                        <th>금액</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="cart-info">
+                                <img src="img/gs25/1+1/GD_6294003599133_002.jpg" alt="">
+                                <div>
+                                    <p>킷캣</p>
+                                    <small>가격 : 1,000원</small>
+                                    <br />
+                                    <a href="">삭제</a>
+                                </div>
+                            </div>
+                        </td>
+                        <td><input type="number" value="1"></td>
+                        <td>6,000원</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="cart-info">
+                                <img src="img/gs25/1+1/GD_8809152414732_001.jpg" alt="">
+                                <div>
+                                    <p>킷캣</p>
+                                    <small>가격 : 1,000원</small>
+                                    <br />
+                                    <a href="">삭제</a>
+                                </div>
+                            </div>
+                        </td>
+                        <td><input type="number" value="1"></td>
+                        <td>6,000원</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="cart-info">
+                                <img src="img/gs25/1+1/GD_8809152414794_001.jpg" alt="">
+                                <div>
+                                    <p>킷캣</p>
+                                    <small>가격 : 1,000원</small>
+                                    <br />
+                                    <a href="">삭제</a>
+                                </div>
+                            </div>
+                        </td>
+                        <td><input type="number" value="1"></td>
+                        <td>6,000원</td>
+                    </tr>
+                </table>
+
+                <div class="total-price">
+                    <table>
+                        <tr>
+                            <td>합계</td>
+                            <td>10,000 원</td>
+                        </tr>
+                        <tr>
+                            <td>총 금액</td>
+                            <td>15,000 원</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!-- 장바구니 -->
+        </div>
+    </section>
+    <!-- //center -->
+    <footer id="footer"></footer>
+</body>
+</html>
