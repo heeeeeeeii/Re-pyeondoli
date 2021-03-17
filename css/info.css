@@ -4,8 +4,16 @@
 @import 'join.css';
 @import 'tos.css';
 @import 'imageUpload.css';
+@import 'board.css';
+
+/* 라이브러리 */
+@import 'jquery.nice-number.css';
 
 /* common */
+.wrap-width {
+    width: 400px;
+}
+
 .bTitle {
     font-size: 22px;
     text-align: center;
@@ -34,7 +42,6 @@
 }
 
 #center .form {
-    /* width: 300px; */
     background-color: white;
     border-radius: 20px;
     padding: 30px;
@@ -42,25 +49,6 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-#center .join-form {
-    width: 300px;
-    background-color: white;
-    border-radius: 20px;
-    padding: 30px;
-    position: relative;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    height: 375px;
-    overflow-y: auto;
-}
-
-.join-wrap {
-    width: 300px;
-    margin: 0 auto;
-    padding: 0 30px;
-    height: 533px;
 }
 
 /* field */
@@ -71,6 +59,10 @@
     padding: 15px;
     border-radius: 16px;
     margin-bottom: 20px;
+}
+
+.two-field {
+    width: 70%;
 }
 
 .field .field-icon {
@@ -100,7 +92,7 @@
 .email-chk {
     height: 54px;
     border-radius: 16px;
-    width: 33%;
+    width: 25%;
     color: white;
     cursor: pointer;
     background-color: #fdcb6e;
